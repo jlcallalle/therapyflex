@@ -13,7 +13,11 @@
 			bottom: 0;
 			right: 0;
 			top: 0;
-			background: rgba($black, .4);
+			background: rgba($black, .6);
+
+			inset: 0;
+			background-image: linear-gradient(170deg, #06140C 12%, #0F172A 100%);
+			opacity: 0.65;
 		}
 	}
 	.player {
@@ -23,7 +27,9 @@
 	}
 	&, & > .container > .row {
 		min-height: 600px;
-		height: calc(100vh);
+		/* height: calc(100vh); */
+		/* height: calc(60vh); */
+		height: calc(70vh);
 	}
 	&.inner-page-cover {
 		&, & > .container > .row {

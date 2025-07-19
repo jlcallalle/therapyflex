@@ -401,7 +401,7 @@ h1, h2, h3, h4, h5,
   margin-bottom: 0;
 }
 .site-navbar .site-navigation .site-menu .active > a span {
-  color: #0e584a;
+  /* color: $primary; */
   border-radius: 30px;
   display: inline-block;
   padding: 5px 20px;
@@ -423,6 +423,8 @@ h1, h2, h3, h4, h5,
   display: inline-block;
   transition: 0.3s all ease;
   border-radius: 30px;
+  color: #d1d1d1;
+  text-transform: uppercase;
 }
 .site-navbar .site-navigation .site-menu > li > a:hover > span {
   color: #fff;
@@ -711,7 +713,10 @@ h1, h2, h3, h4, h5,
   bottom: 0;
   right: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
+  inset: 0;
+  background-image: linear-gradient(170deg, #06140C 12%, #0F172A 100%);
+  opacity: 0.65;
 }
 .site-blocks-cover .player {
   position: absolute;
@@ -720,7 +725,9 @@ h1, h2, h3, h4, h5,
 }
 .site-blocks-cover, .site-blocks-cover > .container > .row {
   min-height: 600px;
-  height: 100vh;
+  /* height: calc(100vh); */
+  /* height: calc(60vh); */
+  height: 70vh;
 }
 .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover > .container > .row {
   min-height: 500px;
@@ -2287,10 +2294,6 @@ h1, h2, h3, h4, h5,
   padding-bottom: 7px !important;
 }
 
-/* body { 
-    border: 4px solid blue;;
-}
- */
 .custom-logo {
   max-width: 190px;
   width: 190px;

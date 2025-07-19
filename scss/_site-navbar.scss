@@ -37,7 +37,7 @@
 					span {
 
 						// background: $primary;
-						color: $primary;
+						/* color: $primary; */
 						border-radius: 30px;
 						display: inline-block;
 						padding: 5px 20px;
@@ -59,6 +59,8 @@
 						display: inline-block;
 						transition: .3s all ease;
 						border-radius: 30px;
+						color: #d1d1d1;
+    					text-transform: uppercase;
 					}
 					&:hover {
 						> span {

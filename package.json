@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch scss/style.scss css/style.css",
-    "serve": "browser-sync start --server --files 'css/*.css' 'js/*.js' '*.html'",
+    "serve": "browser-sync start --server --files \"css/*.css\" \"js/*.js\" \"*.html\"",
     "dev": "npm-run-all --parallel sass serve"
   },
   "keywords": [],
