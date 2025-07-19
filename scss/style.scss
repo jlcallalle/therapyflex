@@ -1,0 +1,33 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+/* Base */
+@import "site-base";
+/* Navbar */
+@import "site-navbar";
+/* Blocks */
+@import "site-blocks";
+
+/* body { 
+    border: 4px solid blue;;
+}
+ */
+.custom-logo  {
+    max-width: 190px;
+    width: 190px;
+}
+
+.btn-primary {
+    color: #212529;
+    background-color: $primary;
+    border-color: $primary;
+}
+
+a {
+    color: #0e584a;
+}
+
+.bg-primary {
+    background-color: #0e584a !important;
+}

@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+
+# IDE
+.idea
+.vscode/
+
+prepros.config
+node_modules/
+package-lock.json
+note
+wp-content/uploads/
