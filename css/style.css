@@ -2176,6 +2176,7 @@ h1, h2, h3, h4, h5,
 }
 .block-services-1 h3 {
   color: #000;
+  font-weight: bold;
 }
 .block-services-1 .block-service-1-more {
   transition: 0.3s all ease;
@@ -2294,6 +2295,10 @@ h1, h2, h3, h4, h5,
   padding-bottom: 7px !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .custom-logo {
   max-width: 190px;
   width: 190px;
@@ -2311,6 +2316,25 @@ a {
 
 .bg-primary {
   background-color: #0e584a !important;
+}
+
+.btn-primary:hover {
+  color: #edf6ee;
+  background-color: #178e79;
+  border-color: #178e79;
+}
+
+.wrapper-slider .texto-banner {
+  font-size: 1.2rem;
+}
+
+.bg-dark-green {
+  background-color: #064E3B; /* verde oscuro tipo Therapy Flex */
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

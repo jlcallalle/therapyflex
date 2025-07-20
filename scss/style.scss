@@ -9,6 +9,10 @@
 /* Blocks */
 @import "site-blocks";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .custom-logo  {
     max-width: 190px;
     width: 190px;
@@ -26,4 +30,25 @@ a {
 
 .bg-primary {
     background-color: #0e584a !important;
+}
+
+.btn-primary:hover {
+    color: #edf6ee;
+    background-color: #178e79;
+    border-color: #178e79;
+}
+
+.wrapper-slider {
+    .texto-banner {
+        font-size: 1.2rem;
+    }
+}
+
+.bg-dark-green {
+  background-color: #064E3B; /* verde oscuro tipo Therapy Flex */
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  height: 100%;
 }
