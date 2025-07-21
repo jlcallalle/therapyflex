@@ -1566,7 +1566,8 @@
 				font-weight: 300;
 			}
 			.excerpt {
-				color: darken(#ccc, 10%);
+				/* color: darken(#ccc, 10%); */
+				color: darken(#ccc, 60%);
 			}
 		}
 	}

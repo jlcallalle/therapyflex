@@ -2168,7 +2168,8 @@ h1, h2, h3, h4, h5,
   font-weight: 300;
 }
 .block-quick-info-2 .quick-info-2 .text .excerpt {
-  color: rgb(178.5, 178.5, 178.5);
+  /* color: darken(#ccc, 10%); */
+  color: #333333;
 }
 
 .block-services-1 {
