@@ -10,3 +10,18 @@ node_modules/
 package-lock.json
 note
 wp-content/uploads/
+
+#Nuevo
+# Ignorar node_modules dentro de html
+html/node_modules/
+
+# Ignorar DS_Store de macOS
+.DS_Store
+
+# Ignorar logs
+*.log
+
+# Ignorar carpetas de caché comunes
+.cache/
+.vscode/
+.idea/
