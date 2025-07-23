@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/style.css">
 
   </head>
-<body <?php body_class(); ?>>
-  
+<!-- <body <?php // body_class(); ?>> -->
+<body class="page-interna">
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -30,7 +30,7 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header class="site-navbar" role="banner">
+    <header class="site-navbar header-interna" role="banner">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-11 col-xl-4">

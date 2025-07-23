@@ -2357,3 +2357,22 @@ a {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* Page Contacto */
+.site-navbar.header-interna {
+  position: relative;
+  /* background-color: #2d2d2d; */
+  background-color: rgba(14, 88, 74, 0.9);
+  top:0;
+}
+
+/* .page-interna  {
+  border:4px solid orange;
+}
+ */
+
+.page-interna .site-blocks-cover, .page-interna .site-blocks-cover > .container > .row {
+    min-height: auto;
+    height: 300px;
+}
