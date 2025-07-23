@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero_bg_3.jpg);" data-aos="fade">
+    <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero_bg_3.jpg);">
 
       <div class="container">
         <div class="row align-items-center">
@@ -208,7 +208,7 @@
       </div>
     </div>
 
-    <div class="block-cta-1 primary-overlay" style="background-image: url('images/hero_bg_2.jpg')">
+    <div class="block-cta-1 primary-overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero_bg_2.jpg);">
       <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-7 mb-4 mb-lg-0">

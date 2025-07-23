@@ -63,22 +63,6 @@
   <script src="<?php bloginfo('template_url') ?>/assets/js/jquery.waypoints.min.js"></script>
 
   <!-- <script src="js/bootstrap-datepicker.min.js"></script> -->
-  <script src="<?php bloginfo('template_url') ?>/assets/js/aos.js"></script>
-  <!--   <script src="js/rangeslider.min.js"></script> -->
-
-  <script src="<?php bloginfo('template_url') ?>/assets/js/typed.js"></script>
-            <script>
-            var typed = new Typed('.typed-words', {
-            strings: ["dolor"," stress"," fatiga"],
-            typeSpeed: 80,
-            backSpeed: 80,
-            backDelay: 4000,
-            startDelay: 1000,
-            loop: true,
-            showCursor: true
-            });
-            </script>
-
   <script src="<?php bloginfo('template_url') ?>/assets/js/main.js"></script>
   
   </body>

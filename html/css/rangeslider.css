@@ -93,7 +93,7 @@
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
 }
-.rangeslider--horizontal .rangeslider__handle {
+.rangeslider--horizontal .__handle {
   top: -10px;
   touch-action: pan-y;
   -ms-touch-action: pan-y;

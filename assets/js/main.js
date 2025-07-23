@@ -1,9 +1,3 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide',
- 	once: true
- });
-
 jQuery(document).ready(function($) {
 
 	"use strict";
@@ -239,22 +233,6 @@ jQuery(document).ready(function($) {
 
 	};
 	siteDatePicker();
-
-	var siteRangeSlider = function() {
-
-		$('input[type="range"]').rangeslider({
-	    polyfill : false,
-	    onInit : function() {
-	        this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
-	    },
-	    onSlide : function( position, value ) {
-	        this.output.html( value );
-	    }
-		});
-
-	};
-	siteRangeSlider();
-
 
 	var counter = function() {
 		
