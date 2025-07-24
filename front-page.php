@@ -90,8 +90,8 @@
                 <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/masajes.jpg'); ?>" alt="Masajes" class="img-fluid">
               </a>
 
-              <h3 class="block-service-1-heading mb-3"><a href="#">Fisioterapia general</a></h3>
-              <div class="block-service-1-excerpt"><p>Descargas músculares, masajes y muchas más.</p></div>
+              <h3 class="block-service-1-heading mb-3"><a href="#">Masajes</a></h3>
+              <div class="block-service-1-excerpt"><p>Descargas músculares, masajes relajantes, descontracturantes y muchas más.</p></div>
               <!-- <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>Conoce más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p> -->
             </div>
           </div>
