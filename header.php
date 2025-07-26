@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/aos.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/style.css">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
+
     
 
     <!-- Google Tag Manager -->
