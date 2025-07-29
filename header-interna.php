@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/aos.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/style.css">
+     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -70,7 +71,7 @@
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li class="active"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Inicio</span></a></li>
-                <li><a href="#servicios"><span>Servicios</span></a></li>
+                <li><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
                 <li><a href="#"><span>Sobre</span></a></li>
                 <li><a href="#"><span>Blog</span></a></li>
                 <li><a href="#contacto"><span>Contacto</span></a></li>

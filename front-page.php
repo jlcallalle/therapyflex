@@ -45,7 +45,7 @@
                 <span class="icon icon-home mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Sede Comas</strong>
-                  <span class="excerpt">Urb el Alamo, calle 24</span>
+                  <span class="excerpt">Urb el Alamo, Mz E2 Lt 26, calle 24 . 2do Piso</span>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
               <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisioterapia-general.webp'); ?>" alt="Masajes" class="img-fluid">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisioterapia-general.webp'); ?>" alt="Terapia Física" class="img-fluid">
               </a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Terapia física y rehabilitación</a></h3>
               <div class="block-service-1-excerpt"><p>Rehabilitamos fracturas, luxaciones, ligamentos y otras lesiones.</p></div>
@@ -108,7 +108,7 @@
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
               <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisico.png'); ?>" alt="Masajes" class="img-fluid">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisico.png'); ?>" alt="Acondicionamiento físico" class="img-fluid">
               </a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Acondicionamiento físico</a></h3>
               <div class="block-service-1-excerpt"><p>Resistencia, flexibilidad, potencia y preparación deportiva.</p></div>
@@ -118,7 +118,7 @@
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
               <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/desgarro.png'); ?>" alt="Masajes" class="img-fluid">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/desgarro.png'); ?>" alt="lesiones deportivas" class="img-fluid">
               </a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Lesiones deportivas</a></h3>
               <div class="block-service-1-excerpt"><p>Lesiones, esguinces, desgarros, luxaciones y lesiones generales.</p></div>

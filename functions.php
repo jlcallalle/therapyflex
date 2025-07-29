@@ -1,5 +1,13 @@
 <?php 
 
+
+function agregar_extracto_a_paginas() {
+    add_post_type_support('page', 'excerpt');
+}
+add_action('init', 'agregar_extracto_a_paginas');
+
+
+
 // Mostrar Tìtulo
 function init_template(){
     add_theme_support('post-thumbnails');
