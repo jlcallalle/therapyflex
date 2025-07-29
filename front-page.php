@@ -91,14 +91,14 @@
               </a>
 
               <h3 class="block-service-1-heading mb-3"><a href="#">Masajes</a></h3>
-              <div class="block-service-1-excerpt"><p>Descargas músculares, masajes relajantes, descontracturantes y muchas más.</p></div>
+              <div class="block-service-1-excerpt"><p>Descargas musculares, masajes relajantes, descontracturantes y muchas más.</p></div>
               <!-- <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>Conoce más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p> -->
             </div>
           </div>
           <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
             <div class="block-service-1-card">
               <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisioterapia-general.webp'); ?>" alt="Terapia Física" class="img-fluid">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisioterapia-general.png'); ?>" alt="Terapia Física" class="img-fluid">
               </a>
               <h3 class="block-service-1-heading mb-3"><a href="#">Terapia física y rehabilitación</a></h3>
               <div class="block-service-1-excerpt"><p>Rehabilitamos fracturas, luxaciones, ligamentos y otras lesiones.</p></div>

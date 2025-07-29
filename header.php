@@ -74,8 +74,8 @@
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li class="active"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Inicio</span></a></li>
-                <!-- <li><a href="#servicios"><span>Servicios</span></a></li> -->
-                <li><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
+                <li><a href="#servicios"><span>Servicios</span></a></li>
+                <!-- <li><a href="<?php // echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li> -->
                 <li><a href="#"><span>Sobre</span></a></li>
                 <li><a href="#"><span>Blog</span></a></li>
                 <li><a href="#contacto"><span>Contacto</span></a></li>

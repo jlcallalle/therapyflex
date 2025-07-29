@@ -9,14 +9,14 @@
 
           <div class="col-12">
             
-            <div class="row mb-4">
+            <div class="row mb-4 mt-4">
               <div class="col-md-9">
 
                 <div class="wp-block-uagb-info-box">
                     <div class="wrapper-slider">
                         <div
                             class="title-banner mb-4">
-                            <h1>Detalle Servivios</h1>
+                            <h1><?php the_title(); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -29,11 +29,11 @@
       </div>
     </div>  
 
-    <main class="container">
+    <main class="container mt-4">
       <div class="row">
         <div class="col-12">
-          <h1>title <?php the_title(); ?></h1>
-          <p>resumen: <?php echo get_the_excerpt(); ?></p>
+          <h1> <?php the_title(); ?></h1>
+          <p> <?php echo get_the_excerpt(); ?></p>
           
           <div class="contenido-servicio">
               <?php the_content(); ?>
