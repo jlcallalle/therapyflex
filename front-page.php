@@ -45,7 +45,8 @@
                 <span class="icon icon-home mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Sede Comas</strong>
-                  <span class="excerpt">Urb el Alamo, Mz E2 Lt 26, calle 24 . 2do Piso</span>
+                  <span class="excerpt"><a href="https://share.google/iNYeVxrLVBnaMBqv1"> Urb el Alamo, Mz E2 Lt 26, Calle 24</a></span>
+                  <span class="font-weight-bold">- Piso 02</span>
                 </div>
               </div>
             </div>
@@ -54,7 +55,7 @@
                 <span class="icon icon-phone mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Contáctanos</strong>
-                  <span class="excerpt"><a href="#">920 830 776</a></span>
+                  <span class="excerpt"><a href="https://wa.me/51920830776">920 830 776</a></span>
                 </div>
               </div>
             </div>
@@ -81,53 +82,52 @@
       </div>
     </div>
 
-    <div id="servicios" class="block-services-1 py-5">
-      <div class="container">
-        <div class="row">
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/masajes.jpg'); ?>" alt="Masajes" class="img-fluid">
-              </a>
+    <!--Servicios  -->
+    <?php
+      $parent = get_page_by_path('servicios');
+      $parent_id = $parent ? $parent->ID : 0;
 
-              <h3 class="block-service-1-heading mb-3"><a href="#">Masajes</a></h3>
-              <div class="block-service-1-excerpt"><p>Descargas musculares, masajes relajantes, descontracturantes y muchas más.</p></div>
-              <!-- <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>Conoce más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p> -->
-            </div>
-          </div>
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisioterapia-general.png'); ?>" alt="Terapia Física" class="img-fluid">
-              </a>
-              <h3 class="block-service-1-heading mb-3"><a href="#">Terapia física y rehabilitación</a></h3>
-              <div class="block-service-1-excerpt"><p>Rehabilitamos fracturas, luxaciones, ligamentos y otras lesiones.</p></div>
-              <!-- <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>Conoce más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p> -->
-            </div>
-          </div>
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fisico.png'); ?>" alt="Acondicionamiento físico" class="img-fluid">
-              </a>
-              <h3 class="block-service-1-heading mb-3"><a href="#">Acondicionamiento físico</a></h3>
-              <div class="block-service-1-excerpt"><p>Resistencia, flexibilidad, potencia y preparación deportiva.</p></div>
-              <!-- <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>Conoce más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p> -->
-            </div>
-          </div>
-          <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-            <div class="block-service-1-card">
-              <a href="#" class="thumbnail-link d-block mb-4">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/desgarro.png'); ?>" alt="lesiones deportivas" class="img-fluid">
-              </a>
-              <h3 class="block-service-1-heading mb-3"><a href="#">Lesiones deportivas</a></h3>
-              <div class="block-service-1-excerpt"><p>Lesiones, esguinces, desgarros, luxaciones y lesiones generales.</p></div>
-              <!-- <p><a href="#" class="d-inline-flex align-items-center block-service-1-more"><span>Conoce más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p> -->
-            </div>
+      $child_pages = get_pages([
+        'child_of' => $parent_id,
+        'sort_column' => 'menu_order',
+      ]);
+
+      if (!empty($child_pages)) :
+      ?>
+      <div id="servicios" class="block-services-1 py-5">
+        <div class="container">
+          <div class="row">
+            <?php foreach ($child_pages as $page) : ?>
+              <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                <div class="block-service-1-card">
+                  <div class="thumbnail-link d-block mb-4">
+                    <?php
+                    if (has_post_thumbnail($page->ID)) {
+                      echo get_the_post_thumbnail($page->ID, 'medium', ['class' => 'img-fluid']);
+                    } else {
+                      echo '<img src="' . get_template_directory_uri() . '/assets/images/default.jpg" class="img-fluid" alt="' . esc_attr($page->post_title) . '">';
+                    }
+                    ?>
+                  </div>
+                  <h3 class="block-service-1-heading mb-3">
+                    <?php echo esc_html($page->post_title); ?>
+                  </h3>
+                  <div class="block-service-1-excerpt">
+                    <p><?php echo esc_html(wp_trim_words($page->post_excerpt ?: $page->post_content, 20)); ?></p>
+                  </div>
+                  <!-- <p>
+                    <a href="<?php //echo get_permalink($page->ID); ?>" class="btn btn-outline-primary btn-sm btn-pill">Ver detalle</a>
+                  </p> -->
+                </div>
+              </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
+
+
+
 
      <div class="site-section section-clientes pb-7">
       <div class="container">
