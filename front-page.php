@@ -46,7 +46,8 @@
                 <div class="text">
                   <strong class="d-block heading">Sede Comas</strong>
                   <span class="excerpt"><a href="https://share.google/iNYeVxrLVBnaMBqv1"> Urb el Alamo, Mz E2 Lt 26, Calle 24</a></span>
-                  <span class="font-weight-bold">- Piso 02</span>
+                  <span>- Piso 02</span>
+                  <!-- <span class="font-weight-bold">- Piso 02</span> -->
                 </div>
               </div>
             </div>
@@ -198,6 +199,7 @@
             <p><span class="icon icon-phone"></span> 920 830 776</p>
             <p><span class="icon icon-envelope"></span> contacto@therapyflex.pe</p>
             <p><span class="icon icon-map"></span> Av Trapiche, Mz E2 Lt 26, calle 24. Urb El Alamo</p>
+            <p><span class="icon icon-map"></span> Atención en 2do Piso</p>
             <p><span class="icon icon-clock-o"></span> Lunes – Viernes: 9:00 a.m. – 7:00 p.m.</p>
             <p><span class="icon icon-clock-o"></span> Sábado: 8:00 a.m. – 4:00 p.m.</p>
             <a class="btn btn-primary btn-pill mt-4" href="https://wa.me/51920830776" role="button">
@@ -217,7 +219,9 @@
             <p class="mb-0 text-white lead"> Comienza tu camino hacia una vida sin dolor.</p>
           </div>
           <div class="col-lg-4">
-            <p class="mb-0"><a href="#" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contáctanos</a></p>
+            <p class="mb-0">
+              <a href="<?php echo esc_url(home_url('/contacto')); ?>" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contáctanos</a>
+            </p>
           </div>
         </div>
       </div>

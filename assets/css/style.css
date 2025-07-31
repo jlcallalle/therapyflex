@@ -725,9 +725,9 @@ h1, h2, h3, h4, h5,
 }
 .site-blocks-cover, .site-blocks-cover > .container > .row {
   min-height: 600px;
+  height: 70vh;
   /* height: calc(100vh); */
   /* height: calc(60vh); */
-  height: 70vh;
 }
 .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover > .container > .row {
   min-height: 500px;
@@ -2372,7 +2372,30 @@ a {
 }
  */
 
-.page-interna .site-blocks-cover, .page-interna .site-blocks-cover > .container > .row {
+.page-interna .site-blocks-cover, 
+.page-interna .site-blocks-cover > .container > .row {
     min-height: auto;
-    height: 300px;
+    height: 400px;
+}
+
+@media (max-width: 540px) {
+  .page-interna .site-blocks-cover, 
+  .page-interna .site-blocks-cover > .container > .row {
+      height: 250px;
+  }
+}
+
+/* Page Paginas servicio */
+.thumbnail-link img {
+    width: 100%;
+}
+
+.tarjeta-servicio a img {
+    width: 100%;
+}
+
+/* tipo servivios */
+.contenido-servicio .wp-block-image img {
+    width: 100%;
+    height: auto;
 }

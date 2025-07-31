@@ -41,7 +41,27 @@
 
 
   </head>
-<body <?php body_class(); ?>>
+<!-- <body <?php //body_class( is_front_page() ? '' : 'page-interna' ); ?>> -->
+<!-- <?php
+  // $extra_classes = is_front_page() ? '' : 'page-interna';
+
+  /* if ( is_page() ) {
+    $slug = get_post_field( 'post_name', get_post() );
+    $extra_classes .= ' page-' . sanitize_html_class( $slug );
+  } */
+?> -->
+
+
+<?php
+  $extra_classes = is_front_page() ? '' : 'page-interna';
+
+  if ( is_page() ) {
+    $slug = get_post_field( 'post_name', get_post() );
+    $extra_classes .= ' page-' . sanitize_html_class( $slug );
+  }
+?>
+<body <?php body_class( $extra_classes ); ?>>
+
   
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJXZ5BB7"
@@ -59,7 +79,9 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header class="site-navbar" role="banner">
+    <!-- <header class="site-navbar" role="banner"> -->
+    <header class="site-navbar <?php echo is_front_page() ? '' : 'header-interna'; ?>" role="banner">
+
       <div class="container">
         <div class="row align-items-center">
           <div class="col-11 col-xl-4">

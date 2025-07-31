@@ -37,8 +37,7 @@
     <!-- End Google tag (gtag.js) -->
 
   </head>
-<!-- <body <?php // body_class(); ?>> -->
-<body class="page-interna">
+<body <?php body_class( is_front_page() ? '' : 'page-interna' ); ?>>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJXZ5BB7"
