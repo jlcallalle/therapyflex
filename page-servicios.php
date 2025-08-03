@@ -28,6 +28,7 @@
         </div>
       </div>
     </div>  
+    
 
     <div  id="servivios"  class="site-section section-mapa pb-7">
       <div class="container">
@@ -50,13 +51,13 @@
                 while ($servicios->have_posts()) : $servicios->the_post();
             ?>
 
-            <div class="col-12 col-md-6 mb-4">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="tarjeta-servicio">
                     <a href="<?php the_permalink(); ?>">
                         <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
                         <?php endif; ?>
-                        <h2 class="mt-3"><?php the_title(); ?></h2>
+                        <h3 class="mt-3"><?php the_title(); ?></h3>
                         <!-- <p><?php // echo get_the_excerpt(); ?></p> -->
                     </a>
                 </div>

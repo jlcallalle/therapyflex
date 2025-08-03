@@ -99,7 +99,7 @@
         <div class="container">
           <div class="row">
             <?php foreach ($child_pages as $page) : ?>
-              <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+              <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-4">
                 <div class="block-service-1-card">
                   <div class="thumbnail-link d-block mb-4">
                     <?php
@@ -117,8 +117,9 @@
                     <p><?php echo esc_html(wp_trim_words($page->post_excerpt ?: $page->post_content, 20)); ?></p>
                   </div>
                   <!-- <p>
-                    <a href="<?php //echo get_permalink($page->ID); ?>" class="btn btn-outline-primary btn-sm btn-pill">Ver detalle</a>
+                    <a href="<?php // echo get_permalink($page->ID); ?>" class="btn btn-outline-primary btn-sm btn-pill">Ir al servicio</a>
                   </p> -->
+                   <p><a href="<?php echo get_permalink($page->ID); ?>" class="d-inline-flex align-items-center block-service-1-more"><span>Ver más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
                 </div>
               </div>
             <?php endforeach; ?>
