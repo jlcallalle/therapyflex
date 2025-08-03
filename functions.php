@@ -79,3 +79,37 @@ function productos_type(){
 }
 
 add_action('init', 'productos_type');
+
+// Custom Post Type
+function crear_post_type_dolencias() {
+  register_post_type('dolencia',
+    array(
+      'labels' => array(
+        'name' => __('Dolencias'),
+        'singular_name' => __('Dolencia'),
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'dolencias'),
+      'supports' => array('title', 'editor', 'thumbnail'),
+      'menu_icon' => 'dashicons-heart',
+      'show_in_rest' => true,
+    )
+  );
+}
+add_action('init', 'crear_post_type_dolencias');
+
+// Taxonomía para Tipo de Servicio
+function crear_taxonomia_tipo_servicio() {
+  register_taxonomy(
+    'tipo_servicio',
+    'dolencia',
+    array(
+      'label' => 'Tipo de Servicio',
+      'rewrite' => array('slug' => 'tipo-servicio'),
+      'hierarchical' => true,
+      'show_in_rest' => true, // Para usar con Gutenberg/ACF
+    )
+  );
+}
+add_action('init', 'crear_taxonomia_tipo_servicio');

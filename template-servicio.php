@@ -64,7 +64,7 @@
           <div class="col-md-6 mb-4">
             <h3>Terapia Rehabilitación</h3>
             <div class="menu-tratamientos mt-4">
-              <ul class="list-group">
+              <ul class="list-group d-none">
                 <li><a href="#">Contractura Muscular</a></li>
                 <li><a href="#">Cervicalgia</a></li>
                 <li><a href="#">Dorsalgia</a></li>
@@ -74,6 +74,54 @@
                 <li><a href="#">Mialgia muscular</a></li>
               </ul>
             </div>
+
+            <div class="menu-tratamientos mt-4">
+              <?php
+                // Obtener el título de la página actual
+                $tipo_servicio_actual = get_the_title();
+
+                // Buscar el término correspondiente en la taxonomía tipo_servicio
+                $term = get_term_by('name', $tipo_servicio_actual, 'tipo_servicio');
+
+                if ($term) {
+                  $args = array(
+                    'post_type' => 'dolencia',
+                    'posts_per_page' => -1,
+                    'orderby' => 'title',
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                      array(
+                        'taxonomy' => 'tipo_servicio',
+                        'field' => 'slug',
+                        'terms' => $term->slug,
+                      )
+                    )
+                  );
+
+                  $query = new WP_Query($args);
+
+                  if ($query->have_posts()) : ?>
+                    <ul class="list-group">
+                      <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <li>
+                          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </li>
+                      <?php endwhile; ?>
+                    </ul>
+                    <?php wp_reset_postdata(); ?>
+                  <?php else : ?>
+                    <p>No se encontraron dolencias para este tipo de servicio.</p>
+                  <?php endif;
+                } else {
+                  echo '<p>No se encontró el tipo de servicio correspondiente.</p>';
+                }
+              ?>
+            </div>
+
+
+
+
+
           </div>
 
           <!-- Formulario de cita -->
