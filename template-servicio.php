@@ -63,17 +63,6 @@
           <!-- Lista de dolencias -->
           <div class="col-md-6 mb-4">
             <h3>Terapia Rehabilitación</h3>
-            <div class="menu-tratamientos mt-4">
-              <ul class="list-group d-none">
-                <li><a href="#">Contractura Muscular</a></li>
-                <li><a href="#">Cervicalgia</a></li>
-                <li><a href="#">Dorsalgia</a></li>
-                <li><a href="#">Lumbalgia</a></li>
-                <li><a href="#">Lumbociatalgia</a></li>
-                <li><a href="#">Escoliosis</a></li>
-                <li><a href="#">Mialgia muscular</a></li>
-              </ul>
-            </div>
 
             <div class="menu-tratamientos mt-4">
               <?php
@@ -87,8 +76,8 @@
                   $args = array(
                     'post_type' => 'dolencia',
                     'posts_per_page' => -1,
-                    'orderby' => 'title',
-                    'order' => 'ASC',
+                    'orderby' => 'date',
+                    'order' => 'ASC', // Esto asegura que el más antiguo va primero =/ DESC
                     'tax_query' => array(
                       array(
                         'taxonomy' => 'tipo_servicio',
@@ -104,7 +93,8 @@
                     <ul class="list-group">
                       <?php while ($query->have_posts()) : $query->the_post(); ?>
                         <li>
-                          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                         <!--  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> -->
+                          <a href="#"><?php the_title(); ?></a>
                         </li>
                       <?php endwhile; ?>
                     </ul>
@@ -133,7 +123,7 @@
                 <select class="form-control" name="servicio">
                   <option value="">Seleccionar servicio</option>
                   <option value="rehabilitacion">Rehabilitación</option>
-                  <option value="pediatria">Pediatría</option>
+                  <!-- <option value="pediatria">Pediatría</option> -->
                   <!-- más opciones -->
                 </select>
               </div>
@@ -141,8 +131,7 @@
               <div class="mb-3">
                 <select class="form-control" name="sede">
                   <option value="">Seleccionar sede</option>
-                  <option value="comas">Comas</option>
-                  <option value="sjl">SJL</option>
+                  <option value="comas">Comas - El Alamo</option>
                   <!-- más opciones -->
                 </select>
               </div>

@@ -110,16 +110,18 @@
                     }
                     ?>
                   </div>
-                  <h3 class="block-service-1-heading mb-3">
-                    <?php echo esc_html($page->post_title); ?>
-                  </h3>
-                  <div class="block-service-1-excerpt">
-                    <p><?php echo esc_html(wp_trim_words($page->post_excerpt ?: $page->post_content, 20)); ?></p>
+                  <div class="item-content-service">
+                    <h3 class="block-service-1-heading mb-3">
+                      <?php echo esc_html($page->post_title); ?>
+                    </h3>
+                    <div class="block-service-1-excerpt">
+                      <p><?php echo esc_html(wp_trim_words($page->post_excerpt ?: $page->post_content, 20)); ?></p>
+                    </div>
+                    <!-- <p>
+                      <a href="<?php // echo get_permalink($page->ID); ?>" class="btn btn-outline-primary btn-sm btn-pill">Ir al servicio</a>
+                    </p> -->
+                     <p><a href="<?php echo get_permalink($page->ID); ?>" class="d-inline-flex align-items-center block-service-1-more"><span>Ver más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
                   </div>
-                  <!-- <p>
-                    <a href="<?php // echo get_permalink($page->ID); ?>" class="btn btn-outline-primary btn-sm btn-pill">Ir al servicio</a>
-                  </p> -->
-                   <p><a href="<?php echo get_permalink($page->ID); ?>" class="d-inline-flex align-items-center block-service-1-more"><span>Ver más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
                 </div>
               </div>
             <?php endforeach; ?>
