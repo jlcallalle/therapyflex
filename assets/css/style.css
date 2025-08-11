@@ -2500,3 +2500,10 @@ a {
     background-color: #d9d9d9;
     transition: all 0.5s ease-out;
 }
+
+/* Contacto */
+
+
+.box-contacto {
+    box-shadow: 0 5px 33px 0 rgba(64, 92.00000000000006, 146, .25);
+}
