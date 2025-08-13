@@ -1,19 +1,16 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <title>Therapy Flex - Terapia Física y Rehabilitación</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/aos.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/style.css">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
 
@@ -78,7 +75,7 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-    
+
     <!-- <header class="site-navbar" role="banner"> -->
     <header class="site-navbar <?php echo is_front_page() ? '' : 'header-interna'; ?>" role="banner">
 
@@ -96,11 +93,12 @@
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li class="active"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Inicio</span></a></li>
-                <li><a href="#servicios"><span>Servicios</span></a></li>
-                <!-- <li><a href="<?php // echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li> -->
+                <!-- <li><a href="#servicios"><span>Servicios</span></a></li> -->
+                <li><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
                 <li><a href="#"><span>Sobre</span></a></li>
                 <li><a href="#"><span>Blog</span></a></li>
-                <li><a href="#contacto"><span>Contacto</span></a></li>
+                <!-- <li><a href="#contacto"><span>Contacto</span></a></li> -->
+                <li><a href="<?php echo esc_url( home_url('/contacto') ); ?>"><span>Contacto</span></a></li>
               </ul>
             </nav>
           </div>
