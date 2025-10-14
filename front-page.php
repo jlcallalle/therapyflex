@@ -130,55 +130,129 @@
       </div>
     <?php endif; ?>
 
-
-
-
-     <div class="site-section section-clientes pb-7">
+    <div class="site-section section-clientes pb-7">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center">
-            <h2 class="site-section-heading text-center font-secondary">Clientes satisfechos</h2>
+            <!-- <h2 class="site-section-heading text-center font-secondary">Clientes satisfechos</h2> -->
+              <section class="ghead">
+                <div class="ghead__stars" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" class="ghead__star"><path d="M12 .9l3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z"/></svg>
+                  <svg viewBox="0 0 24 24" class="ghead__star"><path d="M12 .9l3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z"/></svg>
+                  <svg viewBox="0 0 24 24" class="ghead__star"><path d="M12 .9l3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z"/></svg>
+                  <svg viewBox="0 0 24 24" class="ghead__star"><path d="M12 .9l3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z"/></svg>
+                  <svg viewBox="0 0 24 24" class="ghead__star"><path d="M12 .9l3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z"/></svg>
+                </div>
+
+                <h2><a class="ghead__title" href="https://share.google/hK2d01ZjnUt1B4orj">Consulta nuestras Reseñas de Google</a></h2>
+              </section>
+
           </div>
         </div>
         <div class="row">
-
           <div class="col-12">
-
             <div class="owl-carousel-2 owl-carousel">
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person1.png'); ?>" alt="Ariadna Carpio" />
+                  </div>
+                  <div class="g-meta">
+                    <div class="g-name">Ariadna Carpio</div>
+                    <div class="g-date">2025-09-24</div>
+                  </div>
+                </div>
 
-              <div class="d-block block-testimony mx-auto text-center">
-                <div class="person w-25 mx-auto mb-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person1.png'); ?>" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
                 </div>
-                <div>
-                  <h2 class="h5 mb-4">Carolina Ortega</h2>
-                  <blockquote>&ldquo;Mi tratamiento de mi hombro derecho mejoro bastante gracias a la ayuda de las terapias recibidas por el buen trato al paciente.&rdquo;</blockquote>
-                </div>
+
+                <p class="g-text">Muy buena atención y mucha paciencia, recomendado 😊🙌🏻</p>
               </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">M</div>
+                  <div class="g-meta">
+                    <div class="g-name">Milagros Nunura</div>
+                    <div class="g-date">2025-08-27</div>
+                  </div>
+                  <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
+                </div>
 
-              <div class="d-block block-testimony mx-auto text-center">
-                <div class="person w-25 mx-auto mb-4">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person2.png'); ?>" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
                 </div>
-                <div>
-                  <h2 class="h5 mb-4">Yesenia Chuquino</h2>
-                  <blockquote>&ldquo;Me siento bien con el tratamiento que me realizaron para la cervical , el trabajo que realizó la terapista me recupero y puede aliviar del dolor y mareos.. 💯 por ciento recomendado.&rdquo;</blockquote>
-                </div>
+
+                <p class="g-text">
+                  Una excelente atención y un profesionalismo A1 de la Lic Liz. Gracias a ella estoy mejorando cada vez mas con mi problema en la columna.
+                </p>
               </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">C</div>
+                  <div class="g-meta">
+                    <div class="g-name">Carolina Ortega</div>
+                    <div class="g-date">2025-07-28</div>
+                  </div>
+                  <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
+                </div>
 
-              <div class="d-block block-testimony mx-auto text-center">
-                <div class="person w-25 mx-auto mb-4">
-                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person3.png'); ?>" alt="Image" class="img-fluid rounded-circle w-50 mx-auto">
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
                 </div>
-                <div>
-                  <h2 class="h5 mb-4">Camila Guevara</h2>
-                  <blockquote>&ldquo;He recibido sesiones para tratar mi escoliosis y el dolor de espalda ha disminuido notablemente. Los ejercicios están ayudando a corregir mi columna y mejorar mi postura. ¡Totalmente recomendado!&rdquo;</blockquote>
-                </div>
+
+                <p class="g-text">
+                  Mi tratamiento de mi hombro derecho mejoro bastante gracias a la ayuda de las terapias recibidas por el buen trato al paciente
+                </p>
               </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">Y</div>
+                  <div class="g-meta">
+                    <div class="g-name">Yesenia Chuquino</div>
+                    <div class="g-date">2025-07-15</div>
+                  </div>
+                  <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
+                </div>
 
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+
+                <p class="g-text">
+                  Me siento bien con el tratamiento que me realizaron para la cervical , el trabajo que realizó la terapista me recupero y puede aliviar del dolor y mareos.. 💯 por ciento recomendado.
+                </p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">C</div>
+                  <div class="g-meta">
+                    <div class="g-name">Camila Guevara</div>
+                    <div class="g-date">2025-07-04</div>
+                  </div>
+                  <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
+                </div>
+
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+
+                <p class="g-text">
+                  He recibido sesiones para tratar mi escoliosis y el dolor de espalda ha disminuido notablemente. Los ejercicios están ayudando a corregir mi columna y mejorar mi postura. ¡Totalmente recomendado!
+                </p>
+              </div>
             </div>
           </div>
-          
 
         </div>
       </div>
@@ -217,7 +291,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-7 mb-4 mb-lg-0">
-            <h2 class="mb-3 mt-0 text-white">Hasta un 20% de descuento en tu primera sesión por Inaguración.</h2>
+            <h2 class="mb-3 mt-0 text-white">¡Agenda tu consulta gratuita hoy mismo!</h2>
             <p class="mb-0 text-white lead">Recibe atención personalizada desde tu primera visita.</p>
             <p class="mb-0 text-white lead"> Comienza tu camino hacia una vida sin dolor.</p>
           </div>

@@ -114,7 +114,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-7 mb-4 mb-lg-0">
-            <h2 class="mb-3 mt-0 text-white">Hasta un 20% de descuento en tu primera sesión por Inaguración.</h2>
+            <h2 class="mb-3 mt-0 text-white">¡Agenda tu consulta gratuita hoy mismo!</h2>
             <p class="mb-0 text-white lead">Recibe atención personalizada desde tu primera visita.</p>
             <p class="mb-0 text-white lead"> Comienza tu camino hacia una vida sin dolor.</p>
           </div>
