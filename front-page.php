@@ -14,7 +14,7 @@
                     <div class="wrapper-slider">
                         <div
                             class="title-banner mb-4">
-                            <h1>Terapia Física y Rehabilitación</h1>
+                            <h1>Terapia Física y Rehabilitación en Comas</h1>
                         </div>
                         <p class="texto-banner mt-3">
                           En Therapy Flex nos enfocamos en tu bienestar, contamos con profesionales capacitados que te acompañarán paso a paso en tu recuperación física.
