@@ -2635,3 +2635,151 @@ a {
   width: 35px;
   height: 35px;
 }
+
+.google-reviews-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 2px solid #0e584a;
+  border-radius: 30px;
+  padding: 10px 16px;
+  color: #0e584a;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+
+.google-reviews-btn:hover {
+  background-color: #0e584a;
+  color: #fff;
+  transform: scale(1.05);
+}
+.finger-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Sección galería */
+.tf-gallery {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tf-gallery-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tf-gallery-header h2 {
+  font-size: 2rem;
+  color: #5a1535;
+}
+
+.tf-gallery-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.tf-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.tf-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tf-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tf-gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.tf-gallery-item:hover .tf-gallery-caption {
+  opacity: 1;
+}
+
+/* LIGHTBOX */
+.tf-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.tf-lightbox.is-active {
+  display: flex;
+}
+
+#tfLightboxImage {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones */
+.tf-lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tf-lightbox-prev,
+.tf-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.2s ease;
+}
+
+.tf-lightbox-prev:hover,
+.tf-lightbox-next:hover,
+.tf-lightbox-close:hover {
+  color: #ffcc00;
+}
+
+.tf-lightbox-prev {
+  left: 40px;
+}
+
+.tf-lightbox-next {
+  right: 40px;
+}

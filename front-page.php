@@ -144,8 +144,23 @@
                   <svg viewBox="0 0 24 24" class="ghead__star"><path d="M12 .9l3.1 6.3 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z"/></svg>
                 </div>
 
-                <h2><a class="ghead__title" href="https://share.google/hK2d01ZjnUt1B4orj">Consulta nuestras Reseñas de Google</a></h2>
+                <h2 class="ghead__title" >Consulta nuestras Reseñas de Google</h2>
               </section>
+
+              <a
+                href="https://share.google/hK2d01ZjnUt1B4orj"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="google-reviews-btn mt-3"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/272/272525.png"
+                  alt="Icono dedo – Ver reseñas"
+                  class="finger-icon"
+                />
+                <span>Ver más reseñas en Google</span>
+              </a>
+
 
           </div>
         </div>
@@ -155,11 +170,30 @@
               <div class="g-review-card">
                 <div class="g-review-header">
                   <div class="g-avatar">
+                    <div class="g-avatar g-avatar-initial">C</div>
+                  </div>
+                  <div class="g-meta">
+                    <div class="g-name">Carme Tejada Ruelas </div>
+                    <div class="g-date">04-11-2025</div>
+                  </div>
+                </div>
+
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+
+                <p class="g-text">Excelente servicio!. Mucha paciencia de la Lic. Liz para explicar cada ejercicio, se nota lo comprometida que esta con cada paciente y su recuperación. 100% recomendado.</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person1.png'); ?>" alt="Ariadna Carpio" />
                   </div>
                   <div class="g-meta">
                     <div class="g-name">Ariadna Carpio</div>
-                    <div class="g-date">2025-09-24</div>
+                    <div class="g-date">24-09-2025</div>
                   </div>
                 </div>
 
@@ -173,12 +207,31 @@
               </div>
               <div class="g-review-card">
                 <div class="g-review-header">
+                  <div class="g-avatar">
+                    <div class="g-avatar g-avatar-initial">L</div>
+                  </div>
+                  <div class="g-meta">
+                    <div class="g-name">Libia Torres</div>
+                    <div class="g-date">26-09-2025</div>
+                  </div>
+                </div>
+
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                    <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+
+                <p class="g-text">💯 Recomendado desde la primera sesión sentí un gran alivio.</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
                   <div class="g-avatar g-avatar-initial">M</div>
                   <div class="g-meta">
                     <div class="g-name">Milagros Nunura</div>
-                    <div class="g-date">2025-08-27</div>
+                    <div class="g-date">27-08-2025</div>
                   </div>
-                  <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
+                  <div class="g-google"></div>
                 </div>
 
                 <div class="g-stars" aria-label="5 estrellas">
@@ -196,9 +249,9 @@
                   <div class="g-avatar g-avatar-initial">C</div>
                   <div class="g-meta">
                     <div class="g-name">Carolina Ortega</div>
-                    <div class="g-date">2025-07-28</div>
+                    <div class="g-date">28-07-2025</div>
                   </div>
-                  <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
+                  <div class="g-google"></div>
                 </div>
 
                 <div class="g-stars" aria-label="5 estrellas">
@@ -216,7 +269,7 @@
                   <div class="g-avatar g-avatar-initial">Y</div>
                   <div class="g-meta">
                     <div class="g-name">Yesenia Chuquino</div>
-                    <div class="g-date">2025-07-15</div>
+                    <div class="g-date">15-07-2025</div>
                   </div>
                   <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
                 </div>
@@ -236,7 +289,7 @@
                   <div class="g-avatar g-avatar-initial">C</div>
                   <div class="g-meta">
                     <div class="g-name">Camila Guevara</div>
-                    <div class="g-date">2025-07-04</div>
+                    <div class="g-date">04-07-2025</div>
                   </div>
                   <div class="g-google"><?php /* mismo SVG de arriba */ ?></div>
                 </div>
@@ -252,6 +305,174 @@
                 </p>
               </div>
             </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="galeria" class="site-section">
+      <div class="container">
+        <div class="row">
+          <section class="tf-gallery" id="galeria">
+            <div class="tf-gallery-header">
+              <h2>Galería de Terapia Física en Comas – Therapy Flex</h2>
+              <p>
+              Conoce algunos casos reales de pacientes atendidos en nuestro centro de 
+              terapia física y rehabilitación en Urb. El Álamo, Retablo – Comas.
+              
+            </p>
+            </div>
+
+            <div class="tf-gallery-grid">
+              <div class="tf-gallery-item">
+              
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/servicio.png"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/servicio.png"
+                  alt="Terapia física para dolor lumbar en Therapy Flex, Urb. El Álamo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Terapia física en zona lumbar
+                </figcaption>
+              </div>
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/ari.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/ari.jpg"
+                  alt="Paciente de alta luego de rehabilitación física en Therapy Flex Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Paciente de alta después de su rehabilitación
+                </figcaption>
+              </div>
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/puncion-seca.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/puncion-seca.jpg"
+                  alt="Aplicación de punción en Therapy Flex Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Aplicación de punción seca
+                </figcaption>
+              </div>
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/estiramiento.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/estiramiento.jpg"
+                  alt="Ejercicios de fortalecimiento de gemelos en terapia física en Comas"
+                  loading="lazy"
+                />
+                <div class="tf-gallery-caption">Ejercicios de fortalecimiento de gemelos</div>
+              </div>
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/magento.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/magento.jpg"
+                  alt="Sesión de magnetoterapia en centro de terapia física Therapy Flex Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Magnetoterapia en sesión de rehabilitación
+                </figcaption>
+              </div>
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/cliente.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/cliente.jpg"
+                  alt="Paciente de alta luego de tratamiento de rehabilitación en Therapy Flex"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Paciente de alta satisfecha con su tratamiento
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/abuela.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/abuela.jpg"
+                  lt="Fisioterapia en adulto mayor en Urb. El Álamo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Fisioterapia en adulto mayor
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/ejercicio-pie.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/ejercicio-pie.jpg"
+                  alt="Terapia de tobillo y pie para lesión en Therapy Flex Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Terapia en tobillo y pie
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/lesion_pierna.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/lesion_pierna.jpg"
+                  alt="Rehabilitación de fractura en pie en Therapy Flex, Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Rehabilitación de fractura en pie
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/compresa.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/compresa.jpg"
+                  alt="Masaje terapéutico con compresas calientes en Therapy Flex Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Masaje terapéutico con compresas con compresas calientes
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/ejericios.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/ejericios.jpg"
+                  alt="Ejercicios de fortalecimiento muscular guiados por fisioterapeuta en Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Ejercicios de fortalecimiento muscular
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/ubicacion.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/ubicacion.jpg"
+                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                Ubícanos en Urb. El Álamo, Retablo, Comas
+              </figcaption>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Lightbox -->
+          <div class="tf-lightbox" id="tfLightbox">
+            <button class="tf-lightbox-close" id="tfLightboxClose">&times;</button>
+            <button class="tf-lightbox-prev" id="tfPrev">&#10094;</button>
+            <img src="" alt="Imagen ampliada" id="tfLightboxImage" />
+            <button class="tf-lightbox-next" id="tfNext">&#10095;</button>
           </div>
 
         </div>
