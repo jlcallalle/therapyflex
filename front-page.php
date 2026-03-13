@@ -130,7 +130,7 @@
       </div>
     <?php endif; ?>
 
-    <div class="site-section section-clientes pb-7">
+    <div id="opiniones" class="site-section section-clientes pb-7">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center">
@@ -173,7 +173,7 @@
                     <div class="g-avatar g-avatar-initial">C</div>
                   </div>
                   <div class="g-meta">
-                    <div class="g-name">Carme Tejada Ruelas </div>
+                    <div class="g-name">Carmen Tejada Ruelas </div>
                     <div class="g-date">04-11-2025</div>
                   </div>
                 </div>
