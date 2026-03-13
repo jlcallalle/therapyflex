@@ -20,10 +20,14 @@
                           En Therapy Flex nos enfocamos en tu bienestar, contamos con profesionales capacitados que te acompañarán paso a paso en tu recuperación física.
                         </p>
                         <div class="box-btn-slider mt-4">
-                            <a class="btn btn-primary btn-pill" href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física" role="button">
+                            <a class="btn btn-primary btn-pill"
+                              href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física"
+                              onclick="fbq('trackCustom', 'WhatsAppClick', {ubicacion: 'banner_principal'});"
+                              role="button">
                                 <span><span class="icon-whatsapp"></span> AGENDA TU CITA</span>
                             </a>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -56,7 +60,12 @@
                 <span class="icon icon-phone mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Contáctanos</strong>
-                  <span class="excerpt"><a href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física">920 830 776</a></span>
+                  <span class="excerpt">
+                    <a href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física"
+                      onclick="fbq('trackCustom', 'WhatsAppClick', {ubicacion: 'bloque_contacto'});">
+                      920 830 776
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>
@@ -631,8 +640,11 @@
             <p><span class="icon icon-map"></span> Atención en 2do Piso</p>
             <p><span class="icon icon-clock-o"></span> Lunes – Viernes: 9:00 a.m. – 7:00 p.m.</p>
             <p><span class="icon icon-clock-o"></span> Sábado: 8:00 a.m. – 4:00 p.m.</p>
-            <a class="btn btn-primary btn-pill mt-4" href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física" role="button">
-                <span> <span class="icon-whatsapp"></span> AGENDA TU CITA</span>
+            <a class="btn btn-primary btn-pill mt-4"
+              href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física"
+              onclick="fbq('trackCustom', 'WhatsAppClick', {ubicacion: 'seccion_contacto'});"
+              role="button">
+                <span><span class="icon-whatsapp"></span> AGENDA TU CITA</span>
             </a>
           </div>
         </div>
