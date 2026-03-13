@@ -90,7 +90,7 @@
             <p><span class="icon icon-map"></span> Atención 2do Piso</p>
             <p><span class="icon icon-clock-o"></span> Lunes – Viernes: 9:00 a.m. – 7:00 p.m.</p>
             <p><span class="icon icon-clock-o"></span> Sábado: 8:00 a.m. – 4:00 p.m.</p>
-            <a class="btn btn-primary btn-pill mt-4" href="https://wa.me/51920830776" role="button">
+            <a class="btn btn-primary btn-pill mt-4" href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física" role="button">
                 <span> <span class="icon-whatsapp"></span> AGENDA TU CITA</span>
             </a>
           </div>

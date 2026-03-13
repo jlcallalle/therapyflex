@@ -20,7 +20,7 @@
                           En Therapy Flex nos enfocamos en tu bienestar, contamos con profesionales capacitados que te acompañarán paso a paso en tu recuperación física.
                         </p>
                         <div class="box-btn-slider mt-4">
-                            <a class="btn btn-primary btn-pill" href="https://wa.me/51920830776" role="button">
+                            <a class="btn btn-primary btn-pill" href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física" role="button">
                                 <span><span class="icon-whatsapp"></span> AGENDA TU CITA</span>
                             </a>
                         </div>
@@ -56,7 +56,7 @@
                 <span class="icon icon-phone mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Contáctanos</strong>
-                  <span class="excerpt"><a href="https://wa.me/51920830776">920 830 776</a></span>
+                  <span class="excerpt"><a href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física">920 830 776</a></span>
                 </div>
               </div>
             </div>
@@ -167,6 +167,137 @@
         <div class="row">
           <div class="col-12">
             <div class="owl-carousel-2 owl-carousel">
+             
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">A</div>
+                  <div class="g-meta">
+                    <div class="g-name">Anderson Pinedo Rodriguez</div>
+                    <div class="g-date">06-03-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Excelente servicio.</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">M</div>
+                  <div class="g-meta">
+                    <div class="g-name">Martha Torres</div>
+                    <div class="g-date">13-02-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Excelente servicio de la Licenciada Liz, me hizo sentir segura durante toda la terapia física. Recomendado.</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">C</div>
+                  <div class="g-meta">
+                    <div class="g-name">Cristobal Guizado Villcas</div>
+                    <div class="g-date">13-02-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Recomendado, gracias a la licenciada Liz puede volver a tener movilidad en pierna derecha.</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">N</div>
+                  <div class="g-meta">
+                    <div class="g-name">Naydu Mera</div>
+                    <div class="g-date">13-02-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">La señorita es muy amable y ayudó a mi niña en su proceso para su mejoría en sus piernas. Tiene mucha paciencia pero sobre todo mucho profesionalismo. ¡La recomiendo!!!!</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">Y</div>
+                  <div class="g-meta">
+                    <div class="g-name">Yonela Calcurian</div>
+                    <div class="g-date">13-02-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Excelente profesional 💕 muy agradecida con mi pronta recuperación 🙌🙌</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">V</div>
+                  <div class="g-meta">
+                    <div class="g-name">Vilma Guevara</div>
+                    <div class="g-date">13-02-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Muy buena atención y ya estoy recuperándome del problema de columna que tenía ✨</p>
+              </div>
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">F</div>
+                  <div class="g-meta">
+                    <div class="g-name">Fiorella Antayhua del carpio</div>
+                    <div class="g-date">13-01-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Llegué a Therapy Flex con hernia lumbar y gracias a la terapia física tuve una gran mejoría. Atención profesional y personalizada. Recomiendo totalmente Therapy Flex – Comas.</p>
+              </div>
+
+              <div class="g-review-card">
+                <div class="g-review-header">
+                  <div class="g-avatar g-avatar-initial">J</div>
+                  <div class="g-meta">
+                    <div class="g-name">Jose Contreras</div>
+                    <div class="g-date">13-01-2026</div>
+                  </div>
+                  <div class="g-google"></div>
+                </div>
+                <div class="g-stars" aria-label="5 estrellas">
+                  <?php for($i=0;$i<5;$i++): ?>
+                  <svg viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.91 5.06 16.7 6 11.2l-4-3.9 5.53-.8L10 1.5z"/></svg>
+                  <?php endfor; ?>
+                </div>
+                <p class="g-text">Muy buen servicio, recomendable.</p>
+              </div>
+
               <div class="g-review-card">
                 <div class="g-review-header">
                   <div class="g-avatar">
@@ -500,7 +631,7 @@
             <p><span class="icon icon-map"></span> Atención en 2do Piso</p>
             <p><span class="icon icon-clock-o"></span> Lunes – Viernes: 9:00 a.m. – 7:00 p.m.</p>
             <p><span class="icon icon-clock-o"></span> Sábado: 8:00 a.m. – 4:00 p.m.</p>
-            <a class="btn btn-primary btn-pill mt-4" href="https://wa.me/51920830776" role="button">
+            <a class="btn btn-primary btn-pill mt-4" href="https://wa.me/51920830776?text=Hola%20👋%20Vengo%20de%20la%20web%20de%20Therapy%20Flex%20y%20deseo%20agendar%20una%20cita%20de%20terapia%20física" role="button">
                 <span> <span class="icon-whatsapp"></span> AGENDA TU CITA</span>
             </a>
           </div>
