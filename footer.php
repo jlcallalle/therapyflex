@@ -29,15 +29,38 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4" id="suscripcion-footer">
             <h2 class="footer-heading mb-4">Susbribete</h2>
             <p>Suscríbete a nuestro blog y recibe el 20% dscto enn tu primra cita!</p>
-            <form action="#" method="post" class="subscription">
-              <div class="input-group mb-3  d-flex align-items-stretch">
-                <input type="text" class="form-control bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                <button class="btn btn-primary text-white" type="button" id="button-addon2">Enviar</button>
+            
+            <?php if (isset($_GET['suscripcion']) && $_GET['suscripcion'] === 'ok') : ?>
+              <div class="alert alert-success py-2">
+                Gracias por suscribirte.
+              </div>
+            <?php elseif (isset($_GET['suscripcion'])) : ?>
+              <div class="alert alert-danger py-2">
+                Ingresa un correo válido.
+              </div>
+            <?php endif; ?>
+
+            <form method="POST" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" class="subscription">
+              <input type="hidden" name="action" value="guardar_suscripcion_therapyflex">
+              <?php wp_nonce_field('therapyflex_suscripcion_action', 'therapyflex_suscripcion_nonce'); ?>
+
+              <div class="input-group mb-3 d-flex align-items-stretch">
+                <input 
+                  type="email" 
+                  name="email_suscripcion" 
+                  class="form-control bg-transparent" 
+                  placeholder="Ingresa tu email" 
+                  aria-label="Ingresa tu email" 
+                  required
+                >
+                <button class="btn btn-primary text-white" type="submit">Enviar</button>
               </div>
             </form>
+
+
           </div>
         </div>
         <div class="row pt-5 mt-5">

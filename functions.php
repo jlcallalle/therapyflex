@@ -236,3 +236,87 @@ function therapyflex_contacto_meta_box_callback($post) {
   echo '<p><strong>Mensaje:</strong><br>' . nl2br(esc_html($mensaje)) . '</p>';
   echo '</div>';
 }
+
+// =======================================
+// SUSCRIPCIONES FOOTER
+// =======================================
+
+function therapyflex_register_suscripciones_cpt() {
+  register_post_type('tf_suscripcion', array(
+    'labels' => array(
+      'name' => 'Suscripciones',
+      'singular_name' => 'Suscripción',
+    ),
+    'public' => false,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-email',
+    'supports' => array('title'),
+  ));
+}
+add_action('init', 'therapyflex_register_suscripciones_cpt');
+
+
+function therapyflex_guardar_suscripcion() {
+
+  // 🔐 Seguridad
+  if (
+    !isset($_POST['therapyflex_suscripcion_nonce']) ||
+    !wp_verify_nonce($_POST['therapyflex_suscripcion_nonce'], 'therapyflex_suscripcion_action')
+  ) {
+    wp_redirect(add_query_arg('suscripcion', 'error', wp_get_referer()) . '#suscripcion-footer');
+    exit;
+  }
+
+  // 🧹 Sanitizar
+  $email = sanitize_email($_POST['email_suscripcion'] ?? '');
+
+  // ⚠ Validación
+  if (empty($email) || !is_email($email)) {
+    wp_redirect(add_query_arg('suscripcion', 'email_invalido', wp_get_referer()) . '#suscripcion-footer');
+    exit;
+  }
+
+  // 💾 Guardar en WP
+  $post_id = wp_insert_post(array(
+    'post_type'   => 'tf_suscripcion',
+    'post_status' => 'publish',
+    'post_title'  => $email . ' - ' . current_time('d/m/Y H:i'),
+  ));
+
+  if ($post_id) {
+
+    update_post_meta($post_id, 'email_suscripcion', $email);
+
+    // 📧 Enviar correo
+    $to = array(
+      'contacto@therapyflex.pe',
+      'therapyflex30@gmail.com'
+    );
+
+    $subject_email = 'Nueva suscripción desde Therapy Flex';
+
+    $body = "Nueva suscripción:\n\n";
+    $body .= "Email: $email\n";
+    $body .= "Fecha: " . current_time('d/m/Y H:i');
+
+    $headers = array(
+      'Content-Type: text/plain; charset=UTF-8',
+      'From: Therapy Flex <no-reply@therapyflex.pe>'
+    );
+
+    wp_mail($to, $subject_email, $body, $headers);
+
+    // 🔥 REDIRECCIÓN CON SCROLL AL FOOTER
+    wp_redirect(add_query_arg('suscripcion', 'ok', wp_get_referer()) . '#suscripcion-footer');
+    exit;
+  }
+
+  // ❌ Error general
+  wp_redirect(add_query_arg('suscripcion', 'error', wp_get_referer()) . '#suscripcion-footer');
+  exit;
+}
+
+
+// Hooks
+add_action('admin_post_nopriv_guardar_suscripcion_therapyflex', 'therapyflex_guardar_suscripcion');
+add_action('admin_post_guardar_suscripcion_therapyflex', 'therapyflex_guardar_suscripcion');
