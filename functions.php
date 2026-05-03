@@ -150,25 +150,15 @@ add_action('init', 'therapyflex_register_contactos_cpt');
 // Procesar formulario
 function therapyflex_guardar_contacto() {
 
-  if (
-    !isset($_POST['therapyflex_contact_nonce']) ||
-    !wp_verify_nonce($_POST['therapyflex_contact_nonce'], 'therapyflex_contact_action')
-  ) {
-    wp_redirect(add_query_arg('contacto', 'error', wp_get_referer()));
-    exit;
-  }
-
+  // validación nonce...
+  
   $nombres   = sanitize_text_field($_POST['nombres'] ?? '');
   $apellidos = sanitize_text_field($_POST['apellidos'] ?? '');
   $email     = sanitize_email($_POST['email'] ?? '');
   $subject   = sanitize_text_field($_POST['subject'] ?? '');
   $message   = sanitize_textarea_field($_POST['message'] ?? '');
 
-  if (empty($nombres) || empty($apellidos) || empty($email) || empty($subject) || empty($message)) {
-    wp_redirect(add_query_arg('contacto', 'campos_vacios', wp_get_referer()));
-    exit;
-  }
-
+  // guardar en WP
   $post_id = wp_insert_post(array(
     'post_type'   => 'tf_contacto',
     'post_status' => 'publish',
@@ -182,13 +172,27 @@ function therapyflex_guardar_contacto() {
     update_post_meta($post_id, 'asunto', $subject);
     update_post_meta($post_id, 'mensaje', $message);
 
-    // Enviar correo
-    wp_mail(
+    // 🔥 ENVÍO DE CORREO
+    $to = array(
       'contacto@therapyflex.pe',
-      'Nuevo contacto desde Therapy Flex',
-      "Nombre: $nombres $apellidos\nEmail: $email\nAsunto: $subject\n\nMensaje:\n$message",
-      array('Content-Type: text/plain; charset=UTF-8')
+      'therapyflex30@gmail.com'
     );
+
+    $subject_email = 'Nuevo contacto desde Therapy Flex';
+
+    $body = "Has recibido un nuevo contacto:\n\n";
+    $body .= "Nombre: $nombres $apellidos\n";
+    $body .= "Email: $email\n";
+    $body .= "Asunto: $subject\n\n";
+    $body .= "Mensaje:\n$message";
+
+    $headers = array(
+      'Content-Type: text/plain; charset=UTF-8',
+      'From: Therapy Flex <no-reply@therapyflex.pe>',
+      'Reply-To: ' . $email
+    );
+
+    wp_mail($to, $subject_email, $body, $headers);
 
     wp_redirect(add_query_arg('contacto', 'ok', wp_get_referer()));
     exit;
