@@ -106,6 +106,7 @@
 
   <!-- <script src="js/bootstrap-datepicker.min.js"></script> -->
   <script src="<?php bloginfo('template_url') ?>/assets/js/main.js"></script>
-  
-  </body>
+
+  <?php wp_footer(); ?>
+</body>
 </html>

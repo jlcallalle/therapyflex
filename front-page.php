@@ -170,10 +170,10 @@
                 <span>Ver más reseñas en Google</span>
               </a>
 
-
           </div>
         </div>
-        <div class="row">
+
+        <!-- <div class="row">
           <div class="col-12">
             <div class="owl-carousel-2 owl-carousel">
              
@@ -445,9 +445,18 @@
                 </p>
               </div>
             </div>
-            
+          </div>
+        </div> -->
+        
+        <div class="row">
+          <div class="col-12">
+            <div class="trustindex-google-reviews mt-4">
+              <?php echo do_shortcode('[trustindex no-registration=google]'); ?> 
+            </div>
           </div>
         </div>
+
+        
       </div>
     </div>
 
@@ -482,7 +491,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/ari.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/ari.jpg"
-                  alt="Paciente de alta luego de rehabilitación física en Therapy Flex Comas"
+                  alt="Paciente de alta luego de rehabilitación física en Therapy Flex, Comas"
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">
@@ -513,7 +522,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/magento.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/magento.jpg"
-                  alt="Sesión de magnetoterapia en centro de terapia física Therapy Flex Comas"
+                  alt="Sesión de magnetoterapia en centro de terapia física Therapy Flex, Comas"
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">
@@ -556,39 +565,40 @@
                 </figcaption>
               </div>
 
+
               <div class="tf-gallery-item">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/lesion_pierna.jpg"
-                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/lesion_pierna.jpg"
-                  alt="Rehabilitación de fractura en pie en Therapy Flex, Retablo, Comas"
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/fractura.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/fractura.jpg"
+                  alt="Fractura de tibia y peroné con rehabilitación exitosa"
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">
-                  Rehabilitación de fractura en pie
+                  Fractura de tibia y peroné con rehabilitación exitosa
                 </figcaption>
               </div>
 
               <div class="tf-gallery-item">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/compresa.jpg"
-                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/compresa.jpg"
-                  alt="Masaje terapéutico con compresas calientes en Therapy Flex Comas"
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/domicilio.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/domicilio.jpg"
+                  alt="Terapia física a domicilio en Comas, Therapy Flex"
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">
-                  Masaje terapéutico con compresas con compresas calientes
+                  Terapia física a domicilio para pacientes adulto mayor con movilidad reducida
                 </figcaption>
               </div>
 
               <div class="tf-gallery-item">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/images/ejericios.jpg"
-                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/ejericios.jpg"
-                  alt="Ejercicios de fortalecimiento muscular guiados por fisioterapeuta en Comas"
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/descarga.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/descarga.jpg"
+                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">
-                  Ejercicios de fortalecimiento muscular
+                  Descarga munscular con pistola de masaje para aliviar dolor y mejorar recuperación
                 </figcaption>
               </div>
 
@@ -600,9 +610,63 @@
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">
-                Ubícanos en Urb. El Álamo, Retablo, Comas
-              </figcaption>
+                  Ubícanos en Urb. El Álamo, Retablo, Comas
+                </figcaption>
               </div>
+
+              <!-- nuevo -->
+
+              
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/descarga_run.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/descarga_run.jpg"
+                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Sesion de descarga muscular y fortalecimiento para corredor
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/fractura_maleolo.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/fractura_maleolo.jpg"
+                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Fractura de maleolo con rehabilitación exitosa en Therapy Flex Comas
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/masaje.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/masaje.jpg"
+                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Masaje terapéutico para aliviar tensión muscular en zona cervical
+                </figcaption>
+              </div>
+
+              <div class="tf-gallery-item">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/assets/images/fortalecimiento.jpg"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/fortalecimiento.jpg"
+                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  loading="lazy"
+                />
+                <figcaption class="tf-gallery-caption">
+                  Fortalecimiento en cuadriceps para rehabilitación de rodilla.
+                </figcaption>
+              </div>
+
+             
 
             </div>
           </section>
