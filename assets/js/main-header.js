@@ -6,6 +6,10 @@
     const nextBtn = document.getElementById("tfNext");
     const prevBtn = document.getElementById("tfPrev");
 
+    if (!items.length || !lightbox || !lightboxImage || !closeBtn || !nextBtn || !prevBtn) {
+      return;
+    }
+
     let currentIndex = 0;
 
     function openLightbox(index) {

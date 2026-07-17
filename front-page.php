@@ -74,7 +74,7 @@
                 <span class="icon icon-envelope mr-3"></span>
                 <div class="text">
                   <strong class="d-block heading">Escríbenos</strong>
-                  <span class="excerpt"><a href="#">contacto@therapyflex.pe</a></span>
+                  <span class="excerpt"><a href="mailto:contacto@therapyflex.pe">contacto@therapyflex.pe</a></span>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@
                     if (has_post_thumbnail($page->ID)) {
                       echo get_the_post_thumbnail($page->ID, 'medium', ['class' => 'img-fluid']);
                     } else {
-                      echo '<img src="' . get_template_directory_uri() . '/assets/images/default.jpg" class="img-fluid" alt="' . esc_attr($page->post_title) . '">';
+                      echo '<img src="' . get_template_directory_uri() . '/assets/img/default.png" class="img-fluid" alt="' . esc_attr($page->post_title) . '">';
                     }
                     ?>
                   </div>
@@ -461,7 +461,7 @@
     </div>
 
 
-    <div id="galeria" class="site-section">
+    <div class="site-section">
       <div class="container">
         <div class="row">
           <section class="tf-gallery" id="galeria">
@@ -545,7 +545,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/abuela.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/abuela.jpg"
-                  lt="Fisioterapia en adulto mayor en Urb. El Álamo, Comas"
+                  alt="Fisioterapia en adulto mayor en Urb. El Álamo, Comas"
                   loading="lazy"
                 />
                 <figcaption class="tf-gallery-caption">

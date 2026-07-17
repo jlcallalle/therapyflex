@@ -6,19 +6,19 @@
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
                 <h2 class="footer-heading mb-4">Enlaces</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">Nosotros</a></li>
-                  <li><a href="#">Servicios</a></li>
-                  <li><a href="#">Testimonios</a></li>
-                  <li><a href="#">Contactanos</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>">Nosotros</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/servicios')); ?>">Servicios</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>">Testimonios</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/contacto')); ?>">Contáctanos</a></li>
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
                 <h2 class="footer-heading mb-4">Productos</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">Nosotros</a></li>
-                  <li><a href="#">Servicios</a></li>
-                  <li><a href="#">Testimonios</a></li>
-                  <li><a href="#">Contactanos</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/#galeria')); ?>">Galería</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/servicios')); ?>">Servicios</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>">Testimonios</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/contacto')); ?>">Contáctanos</a></li>
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
@@ -30,8 +30,8 @@
             </div>
           </div>
           <div class="col-lg-4" id="suscripcion-footer">
-            <h2 class="footer-heading mb-4">Susbribete</h2>
-            <p>Suscríbete a nuestro blog y recibe el 20% dscto enn tu primra cita!</p>
+            <h2 class="footer-heading mb-4">Suscríbete</h2>
+            <p>Suscríbete a nuestro blog y recibe el 20% de descuento en tu primera cita.</p>
             
             <?php if (isset($_GET['suscripcion']) && $_GET['suscripcion'] === 'ok') : ?>
               <div class="alert alert-success py-2">

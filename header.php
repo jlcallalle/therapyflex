@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Therapy Flex | Terapia Física y Rehabilitación en Comas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/style.css">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
-    <script src="<?php bloginfo('template_url') ?>/assets/js/main-header.js"></script>
+    <script src="<?php echo esc_url(get_template_directory_uri() . '/assets/js/main-header.js?ver=' . filemtime(get_template_directory() . '/assets/js/main-header.js')); ?>"></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -43,6 +42,8 @@
     src="https://www.facebook.com/tr?id=1660178265392836&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Meta Pixel Code -->
+
+    <?php wp_head(); ?>
     
   </head>
 
@@ -55,6 +56,7 @@
   }
 ?>
 <body <?php body_class( $extra_classes ); ?>>
+  <?php wp_body_open(); ?>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJXZ5BB7"
@@ -80,7 +82,7 @@
           <div class="col-11 col-xl-4">
             <h1 class="mb-0 site-logo">
               <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white mb-0">
-                <img class="custom-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="">
+                <img class="custom-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Therapy Flex">
               </a>
             </h1>
           </div>
@@ -91,8 +93,8 @@
                 <li class="active"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Inicio</span></a></li>
                 <!-- <li><a href="#servicios"><span>Servicios</span></a></li> -->
                 <li><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
-                <li><a href="#"><span>Sobre</span></a></li>
-                <li><a href="#"><span>Blog</span></a></li>
+                <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>"><span>Sobre</span></a></li>
+                <li><a href="<?php echo esc_url(home_url('/#galeria')); ?>"><span>Blog</span></a></li>
                 <!-- <li><a href="#contacto"><span>Contacto</span></a></li> -->
                 <li><a href="<?php echo esc_url( home_url('/contacto') ); ?>"><span>Contacto</span></a></li>
               </ul>

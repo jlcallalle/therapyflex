@@ -29,16 +29,23 @@ add_action('after_setup_theme','init_template');
 // ASSETS (CSS / JS)
 // ===============================
 function assets(){
-    wp_register_style('bootstrap','https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', '', '4.4.1','all');
-    wp_register_style('montserrat', 'https://fonts.googleapis.com/css?family=Montserrat&display=swap','','1.0', 'all');
-
-    wp_enqueue_style('estilos', get_stylesheet_uri(), array('bootstrap','montserrat'),'1.0', 'all');
-   
-    wp_register_script('popper','https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js','','1.16.0', true);
-    wp_enqueue_script('boostraps', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array('jquery','popper'),'4.4.1', true);
-    wp_enqueue_script('custom', get_template_directory_uri().'/assets/js/custom.js', '', '1.0', true);
+    // Los assets principales se cargan en header.php/footer.php.
+    // Mantener este hook evita duplicar Bootstrap/jQuery al habilitar wp_head().
 }
 add_action('wp_enqueue_scripts','assets');
+
+
+// ===============================
+// TÍTULO DEL SITIO
+// ===============================
+function therapyflex_document_title($title) {
+    if (is_front_page() || is_home()) {
+        return 'Therapy Flex | Terapia Física y Rehabilitación en Comas';
+    }
+
+    return $title;
+}
+add_filter('pre_get_document_title', 'therapyflex_document_title');
 
 
 // ===============================
@@ -150,13 +157,24 @@ add_action('init', 'therapyflex_register_contactos_cpt');
 // Procesar formulario
 function therapyflex_guardar_contacto() {
 
-  // validación nonce...
+  if (
+    !isset($_POST['therapyflex_contact_nonce']) ||
+    !wp_verify_nonce($_POST['therapyflex_contact_nonce'], 'therapyflex_contact_action')
+  ) {
+    wp_redirect(add_query_arg('contacto', 'error', wp_get_referer()));
+    exit;
+  }
   
   $nombres   = sanitize_text_field($_POST['nombres'] ?? '');
   $apellidos = sanitize_text_field($_POST['apellidos'] ?? '');
   $email     = sanitize_email($_POST['email'] ?? '');
   $subject   = sanitize_text_field($_POST['subject'] ?? '');
   $message   = sanitize_textarea_field($_POST['message'] ?? '');
+
+  if (empty($nombres) || empty($apellidos) || empty($email) || !is_email($email) || empty($subject) || empty($message)) {
+    wp_redirect(add_query_arg('contacto', 'error', wp_get_referer()));
+    exit;
+  }
 
   // guardar en WP
   $post_id = wp_insert_post(array(

@@ -30,7 +30,7 @@
     </div>  
     
 
-    <div  id="servivios"  class="site-section section-mapa pb-7">
+    <div id="servicios-listado" class="site-section section-mapa pb-7">
       <div class="container">
         <div class="row mb-4">
             <?php
@@ -75,20 +75,16 @@
       </div>
     </div>
 
-    <div id="servivios" class="site-section section-mapa pb-7">
-        
-    </div>
-
     <div class="block-cta-1 primary-overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero_bg_2.jpg);">
       <div class="container">
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-7 mb-4 mb-lg-0">
-            <h2 class="mb-3 mt-0 text-white">Hasta un 20% de descuento en tu primera sesión por Inaguración.</h2>
+            <h2 class="mb-3 mt-0 text-white">Hasta un 20% de descuento en tu primera sesión por inauguración.</h2>
             <p class="mb-0 text-white lead">Recibe atención personalizada desde tu primera visita.</p>
             <p class="mb-0 text-white lead"> Comienza tu camino hacia una vida sin dolor.</p>
           </div>
           <div class="col-lg-4">
-            <p class="mb-0"><a href="#" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contáctanos</a></p>
+            <p class="mb-0"><a href="<?php echo esc_url(home_url('/contacto')); ?>" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contáctanos</a></p>
           </div>
         </div>
       </div>
