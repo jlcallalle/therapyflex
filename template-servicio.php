@@ -1,5 +1,5 @@
 <?php /* Template Name: Plantilla Servicio */ ?>
-<?php  get_header('interna'); ?>
+<?php get_header(); ?>
 
 
     <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero_bg_3.jpg);" >
@@ -29,7 +29,7 @@
       </div>
     </div>  
     
-    <main class="container mt-4">
+    <main id="contenido-principal" class="container mt-4">
       <!-- Breadcrumb -->
       <nav class="breadcrumb mb-4">
         <a class="mr-2" href="<?php echo home_url(); ?>">Inicio &gt;</a>

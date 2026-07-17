@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
+<main id="contenido-principal">
 
-    <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/banner-especialidades-3.jpg);" >
+    <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/banner-servicios.jpg);" >
 
       <div class="container">
         <div class="row align-items-center">
@@ -15,7 +16,7 @@
                     <div class="wrapper-slider">
                         <div
                             class="title-banner mb-4">
-                            <h1 class="display-4">Therapy Flex</h1>
+                            <p class="display-4 text-white mb-0">Therapy Flex</p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +35,7 @@
           <div class="col-12 mb-5">
             <h1 class="display-4">¡Ups! Página no encontrada</h1>
             <p class="lead">La página que buscas no existe o fue movida.</p>
-            <a href="<?php echo home_url(); ?>" class="btn btn-primary mt-3">
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="btn btn-primary mt-3">
                 Volver al inicio
             </a>
           </div>
@@ -52,10 +53,12 @@
             <p class="mb-0 text-white lead"> Comienza tu camino hacia una vida sin dolor.</p>
           </div>
           <div class="col-lg-4">
-            <p class="mb-0"><a href="#" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contáctanos</a></p>
+            <p class="mb-0"><a href="<?php echo esc_url(home_url('/contacto')); ?>" class="btn btn-outline-white text-white btn-md btn-pill px-5 font-weight-bold btn-block">Contáctanos</a></p>
           </div>
         </div>
       </div>
     </div>
                
+</main>
+
 <?php get_footer(); ?>

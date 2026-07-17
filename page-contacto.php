@@ -1,6 +1,8 @@
 <?php /* Template Name: Contacto */ ?>
 <?php get_header(); ?>
 
+<main id="contenido-principal">
+
 <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/banner-servicios.jpg);">
   <div class="container">
     <div class="row align-items-center">
@@ -147,5 +149,7 @@
     </div>
   </div>
 </div>
+
+</main>
 
 <?php get_footer(); ?>

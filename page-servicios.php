@@ -1,6 +1,7 @@
 <?php /* Template Name: Servicios */ ?>
 <?php get_header(); ?>
 
+<main id="contenido-principal">
 
     <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/banner-servicios.jpg);" >
 
@@ -90,4 +91,6 @@
       </div>
     </div>
                
+</main>
+
 <?php get_footer(); ?>

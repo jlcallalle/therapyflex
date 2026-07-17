@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<div class="container mt-5">
-  <h1><?php the_title(); ?></h1>
+<main id="contenido-principal" class="container mt-5">
+  <h1><?php echo esc_html(get_the_title()); ?></h1>
 
   <?php if (has_post_thumbnail()) : ?>
     <div class="mb-4">
@@ -12,6 +12,6 @@
   <div class="contenido">
     <?php the_content(); ?>
   </div>
-</div>
+</main>
 
 <?php get_footer(); ?>

@@ -65,9 +65,11 @@ jQuery(document).ready(function($) {
 			if ( $('body').hasClass('offcanvas-menu') ) {
 				$('body').removeClass('offcanvas-menu');
 				$this.removeClass('active');
+				$this.attr('aria-expanded', 'false');
 			} else {
 				$('body').addClass('offcanvas-menu');
 				$this.addClass('active');
+				$this.attr('aria-expanded', 'true');
 			}
 		}) 
 
@@ -77,6 +79,7 @@ jQuery(document).ready(function($) {
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
 	      if ( $('body').hasClass('offcanvas-menu') ) {
 					$('body').removeClass('offcanvas-menu');
+					$('.js-menu-toggle').removeClass('active').attr('aria-expanded', 'false');
 				}
 	    }
 		});
