@@ -1,3 +1,25 @@
+  (function () {
+    const loader = document.getElementById("therapyflexLoader");
+
+    if (!loader) {
+      return;
+    }
+
+    function hideLoader() {
+      loader.classList.add("is-hidden");
+      window.setTimeout(function () {
+        loader.remove();
+      }, 350);
+    }
+
+    if (document.readyState === "complete") {
+      hideLoader();
+    } else {
+      window.addEventListener("load", hideLoader, { once: true });
+      window.setTimeout(hideLoader, 2500);
+    }
+  })();
+
   document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".tf-gallery-item img");
     const lightbox = document.getElementById("tfLightbox");

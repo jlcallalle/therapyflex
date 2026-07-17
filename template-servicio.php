@@ -136,10 +136,40 @@
                 <label class="screen-reader-text" for="servicio_cita">Servicio</label>
                 <select class="form-control" id="servicio_cita" name="servicio" required>
                   <option value="">Seleccionar servicio</option>
-                  <option value="<?php echo esc_attr(get_the_title()); ?>"><?php echo esc_html(get_the_title()); ?></option>
-                  <option value="Rehabilitación">Rehabilitación</option>
-                  <!-- <option value="pediatria">Pediatría</option> -->
-                  <!-- más opciones -->
+                  <?php
+                    $servicios_cita = new WP_Query(array(
+                      'post_type' => 'page',
+                      'post_status' => 'publish',
+                      'posts_per_page' => -1,
+                      'orderby' => array(
+                        'menu_order' => 'ASC',
+                        'title' => 'ASC',
+                      ),
+                      'meta_query' => array(
+                        array(
+                          'key' => '_wp_page_template',
+                          'value' => 'template-servicio.php',
+                        ),
+                      ),
+                    ));
+
+                    if ($servicios_cita->have_posts()) :
+                      while ($servicios_cita->have_posts()) :
+                        $servicios_cita->the_post();
+                  ?>
+                        <option value="<?php echo esc_attr(get_the_title()); ?>" <?php selected(get_the_ID(), get_queried_object_id()); ?>>
+                          <?php echo esc_html(get_the_title()); ?>
+                        </option>
+                  <?php
+                      endwhile;
+                      wp_reset_postdata();
+                    else :
+                  ?>
+                      <option value="<?php echo esc_attr(get_the_title()); ?>"><?php echo esc_html(get_the_title()); ?></option>
+                  <?php endif; ?>
+                  <option value="Descarga Muscular">Descarga Muscular</option>
+                  <option value="Masajes Terapéuticos">Masajes Terapéuticos</option>
+                  <option value="Otros">Otros</option>
                 </select>
               </div>
 

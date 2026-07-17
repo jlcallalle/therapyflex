@@ -72,10 +72,38 @@
               <label class="text-black" for="subject">Seleccione el asunto</label>
               <select id="subject" name="subject" class="form-control" required>
                 <option value="">Seleccione un asunto</option>
-                <option value="consulta_general">Consulta general</option>
-                <option value="consulta_cita">Consulta cita para fisioterapia</option>
-                <option value="consulta_domicilio">Solicitar fisioterapia a domicilio</option>
-                <option value="otro">Otro</option>
+                <option value="Consulta general">Consulta general</option>
+                <?php
+                  $servicios_contacto = new WP_Query(array(
+                    'post_type' => 'page',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,
+                    'orderby' => array(
+                      'menu_order' => 'ASC',
+                      'title' => 'ASC',
+                    ),
+                    'meta_query' => array(
+                      array(
+                        'key' => '_wp_page_template',
+                        'value' => 'template-servicio.php',
+                      ),
+                    ),
+                  ));
+
+                  if ($servicios_contacto->have_posts()) :
+                    while ($servicios_contacto->have_posts()) :
+                      $servicios_contacto->the_post();
+                ?>
+                      <option value="<?php echo esc_attr(get_the_title()); ?>"><?php echo esc_html(get_the_title()); ?></option>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                  endif;
+                ?>
+                <option value="Terapia física a domicilio">Solicitar fisioterapia a domicilio</option>
+                <option value="Descarga Muscular">Descarga Muscular</option>
+                <option value="Masajes Terapéuticos">Masajes Terapéuticos</option>
+                <option value="Otros">Otros</option>
               </select>
             </div>
           </div>

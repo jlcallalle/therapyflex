@@ -2889,6 +2889,65 @@ textarea:focus {
   background-image: url("../images/hero_bg_3.jpg");
 }
 
+.therapyflex-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.therapyflex-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.therapyflex-loader__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 88px;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.therapyflex-loader__mark span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0e584a;
+  animation: therapyflex-loader-bounce 0.8s ease-in-out infinite;
+}
+
+.therapyflex-loader__mark span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.therapyflex-loader__mark span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes therapyflex-loader-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.75);
+    opacity: 0.55;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 767.98px) {
   .home-hero {
     background-image: url("../images/hero_bg_3-mobile.jpg");
@@ -2896,6 +2955,10 @@ textarea:focus {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .therapyflex-loader__mark span {
+    animation: none !important;
+  }
+
   *,
   *::before,
   *::after {

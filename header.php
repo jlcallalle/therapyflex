@@ -75,6 +75,14 @@
   <!-- End Google Tag Manager (noscript) -->
   
   <a class="skip-link screen-reader-text" href="#contenido-principal">Saltar al contenido principal</a>
+  <div class="therapyflex-loader" id="therapyflexLoader" aria-hidden="true">
+    <div class="therapyflex-loader__mark">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <span class="screen-reader-text">Cargando Therapy Flex</span>
+  </div>
 
   <div class="site-wrap">
 
