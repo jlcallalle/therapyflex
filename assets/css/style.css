@@ -2416,6 +2416,88 @@ a {
   text-decoration: underline;
 }
 
+.servicios-listado {
+  background: #fff;
+}
+
+.servicios-listado__items {
+  display: grid;
+  gap: 34px;
+}
+
+.servicio-resumen-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 50%);
+  overflow: hidden;
+  min-height: 360px;
+  background: #f2faf7;
+  border: 1px solid rgba(14, 88, 74, 0.08);
+  border-radius: 8px;
+}
+
+.servicio-resumen-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 52px);
+}
+
+.servicio-resumen-card h2 {
+  margin: 0 0 18px;
+  color: #042033;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.servicio-resumen-card h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.servicio-resumen-card h2 a:hover {
+  color: #0e584a;
+}
+
+.servicio-resumen-card__excerpt {
+  color: #1d2d2a;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.servicio-resumen-card__excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.servicio-resumen-card__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 22px;
+  color: #0e584a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.servicio-resumen-card__link:hover {
+  color: #178e79;
+  text-decoration: underline;
+}
+
+.servicio-resumen-card__media {
+  display: block;
+  min-height: 320px;
+  background: #dfeee9;
+}
+
+.servicio-resumen-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
 .contenido-servicio p {
   font-size: 16px;
   line-height: 1.6;
@@ -2978,6 +3060,28 @@ textarea:focus {
 @media (max-width: 767.98px) {
   .home-hero {
     background-image: url("../images/hero_bg_3-mobile.jpg");
+  }
+
+  .servicios-listado__items {
+    gap: 24px;
+  }
+
+  .servicio-resumen-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .servicio-resumen-card__content {
+    padding: 26px 22px;
+  }
+
+  .servicio-resumen-card__media {
+    order: -1;
+    min-height: 220px;
+  }
+
+  .servicio-resumen-card__media img {
+    min-height: 220px;
   }
 
   .dolencia-featured-image {

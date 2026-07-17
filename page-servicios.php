@@ -31,9 +31,9 @@
     </div>  
     
 
-    <div id="servicios-listado" class="site-section section-mapa pb-7">
+    <div id="servicios-listado" class="site-section servicios-listado pb-7">
       <div class="container">
-        <div class="row mb-4">
+        <div class="servicios-listado__items">
             <?php
             // Obtener ID de la página actual (Servicios)
             $servicios_page_id = get_the_ID();
@@ -52,17 +52,33 @@
                 while ($servicios->have_posts()) : $servicios->the_post();
             ?>
 
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="tarjeta-servicio">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
-                        <?php endif; ?>
-                        <h3 class="mt-3"><?php the_title(); ?></h3>
-                        <!-- <p><?php // echo get_the_excerpt(); ?></p> -->
+            <article class="servicio-resumen-card">
+                <div class="servicio-resumen-card__content">
+                    <h2>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h2>
+                    <div class="servicio-resumen-card__excerpt">
+                        <?php
+                        $excerpt = get_the_excerpt();
+
+                        if (empty($excerpt)) {
+                            $excerpt = wp_trim_words(wp_strip_all_tags(get_the_content()), 38, '...');
+                        }
+
+                        echo wp_kses_post(wpautop($excerpt));
+                        ?>
+                    </div>
+                    <a class="servicio-resumen-card__link" href="<?php the_permalink(); ?>">
+                        Ver servicio
                     </a>
                 </div>
-            </div>
+
+                <a class="servicio-resumen-card__media" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr('Ver ' . get_the_title()); ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
+                        <?php endif; ?>
+                </a>
+            </article>
 
             <?php
                 endwhile;
