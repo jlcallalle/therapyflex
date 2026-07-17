@@ -9,9 +9,13 @@ Estos puntos no deben resolverse editando directamente el tema sin revisar la co
 - Verificar canonical para home, servicios, contacto y CPTs.
 - Verificar Open Graph y Twitter Cards.
 - Verificar sitemap XML.
+- Enviar `wp-sitemap.xml` en Google Search Console; en el informe enviado no aparece ningun sitemap registrado.
 - Revisar `robots.txt`.
 - Revisar estructura de enlaces permanentes.
 - Validar indexacion de CPT `dolencia` y posible CPT `producto`.
+- Revisar en Search Console la URL exacta afectada por "Duplicada: el usuario no ha indicado ninguna version canonica" y ejecutar "Validar correccion" luego de subir el tema.
+- Revisar la URL marcada como "Pagina con redireccion"; si redirige a la URL canonica correcta, no requiere correccion.
+- Revisar las 17 URLs "Rastreada: actualmente sin indexar" y priorizar contenido util, enlaces internos y solicitud de indexacion solo para URLs importantes.
 
 ## SEO local
 
@@ -54,8 +58,9 @@ Estos puntos no deben resolverse editando directamente el tema sin revisar la co
 ## Operacion
 
 - Conectar Google Search Console.
+- Enviar sitemap en Search Console: `wp-sitemap.xml`.
+- Validar en Search Console las correcciones de canonical despues del despliegue.
 - Conectar GA4.
 - Monitorear errores 404.
 - Configurar backups automaticos.
 - Definir flujo de staging/produccion.
-

@@ -121,6 +121,15 @@ function therapyflex_add_sitemap_to_robots($output, $public) {
 }
 add_filter('robots_txt', 'therapyflex_add_sitemap_to_robots', 10, 2);
 
+function therapyflex_disable_users_sitemap($provider, $name) {
+    if ('users' === $name) {
+        return false;
+    }
+
+    return $provider;
+}
+add_filter('wp_sitemaps_add_provider', 'therapyflex_disable_users_sitemap', 10, 2);
+
 
 // ===============================
 // SIDEBAR
