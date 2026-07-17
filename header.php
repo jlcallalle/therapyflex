@@ -4,15 +4,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/style.css?ver=' . filemtime(get_template_directory() . '/assets/css/style.css')); ?>">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
-    <script src="<?php echo esc_url(get_template_directory_uri() . '/assets/js/main-header.js?ver=' . filemtime(get_template_directory() . '/assets/js/main-header.js')); ?>"></script>
+    <?php if (is_front_page()) : ?>
+      <link rel="preload" as="image" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero_bg_3-mobile.jpg'); ?>" media="(max-width: 767.98px)" fetchpriority="high">
+      <link rel="preload" as="image" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/hero_bg_3.jpg'); ?>" media="(min-width: 768px)" fetchpriority="high">
+    <?php endif; ?>
+    <script defer src="<?php echo esc_url(get_template_directory_uri() . '/assets/js/main-header.js?ver=' . filemtime(get_template_directory() . '/assets/js/main-header.js')); ?>"></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -81,14 +87,14 @@
 
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-11 col-xl-4">
+          <div class="col-9 col-xl-4">
             <div class="mb-0 site-logo">
               <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white mb-0">
                 <img class="custom-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Therapy Flex">
               </a>
             </div>
           </div>
-          <div class="col-12 col-md-8 d-none d-xl-block">
+          <div class="col-xl-8 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
@@ -102,7 +108,7 @@
               </ul>
             </nav>
           </div>
-          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+          <div class="col-3 d-xl-none text-right py-3">
             <button type="button" class="site-menu-toggle js-menu-toggle text-white" aria-label="Abrir menú" aria-controls="site-mobile-menu" aria-expanded="false">
               <span class="icon-menu h3" aria-hidden="true"></span>
             </button>

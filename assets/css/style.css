@@ -2830,6 +2830,61 @@ textarea:focus {
   padding: 0;
 }
 
+.site-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: #fff;
+  line-height: 1;
+}
+
+.site-navbar button.site-menu-toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  color: #fff !important;
+  font: inherit;
+}
+
+.site-navbar button.site-menu-toggle:hover,
+.site-navbar button.site-menu-toggle:active {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+.site-navbar button.site-menu-toggle:focus {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-menu-toggle .icon-menu {
+  display: block;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.site-navbar .row {
+  position: relative;
+}
+
+.home-hero {
+  background-image: url("../images/hero_bg_3.jpg");
+}
+
+@media (max-width: 767.98px) {
+  .home-hero {
+    background-image: url("../images/hero_bg_3-mobile.jpg");
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

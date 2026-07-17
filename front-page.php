@@ -2,7 +2,7 @@
 
 <main id="contenido-principal">
 
-    <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero_bg_3.jpg);">
+    <div class="site-blocks-cover overlay home-hero">
 
       <div class="container">
         <div class="row align-items-center">
