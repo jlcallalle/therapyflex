@@ -339,6 +339,146 @@ function therapyflex_contacto_meta_box_callback($post) {
 }
 
 // =======================================
+// CITAS (FORMULARIO DE SERVICIO)
+// =======================================
+function therapyflex_register_citas_cpt() {
+  register_post_type('tf_cita', array(
+    'labels' => array(
+      'name' => 'Citas',
+      'singular_name' => 'Cita',
+    ),
+    'public' => false,
+    'show_ui' => true,
+    'menu_icon' => 'dashicons-calendar-alt',
+    'supports' => array('title'),
+  ));
+}
+add_action('init', 'therapyflex_register_citas_cpt');
+
+function therapyflex_redirect_cita($status) {
+  $referer = wp_get_referer();
+  $fallback = home_url('/');
+  $redirect_to = $referer ? $referer : $fallback;
+
+  wp_safe_redirect(add_query_arg('cita', $status, $redirect_to) . '#formulario-cita');
+  exit;
+}
+
+function therapyflex_guardar_cita() {
+  if (
+    !isset($_POST['therapyflex_cita_nonce']) ||
+    !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['therapyflex_cita_nonce'])), 'therapyflex_cita_action')
+  ) {
+    therapyflex_redirect_cita('error');
+  }
+
+  $servicio   = sanitize_text_field(wp_unslash($_POST['servicio'] ?? ''));
+  $sede       = sanitize_text_field(wp_unslash($_POST['sede'] ?? ''));
+  $nombre     = sanitize_text_field(wp_unslash($_POST['nombre'] ?? ''));
+  $telefono   = sanitize_text_field(wp_unslash($_POST['telefono'] ?? ''));
+  $correo     = sanitize_email(wp_unslash($_POST['correo'] ?? ''));
+  $fecha      = sanitize_text_field(wp_unslash($_POST['fecha'] ?? ''));
+  $hora       = sanitize_text_field(wp_unslash($_POST['hora'] ?? ''));
+  $comentario = sanitize_textarea_field(wp_unslash($_POST['comentario'] ?? ''));
+  $origen     = esc_url_raw(wp_unslash($_POST['origen'] ?? ''));
+
+  if (empty($servicio) || empty($sede) || empty($nombre) || empty($telefono) || empty($correo) || !is_email($correo)) {
+    therapyflex_redirect_cita('error');
+  }
+
+  if (!empty($fecha) && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $fecha)) {
+    therapyflex_redirect_cita('error');
+  }
+
+  if (!empty($hora) && !preg_match('/^\d{2}:\d{2}$/', $hora)) {
+    therapyflex_redirect_cita('error');
+  }
+
+  $post_id = wp_insert_post(array(
+    'post_type'   => 'tf_cita',
+    'post_status' => 'publish',
+    'post_title'  => $nombre . ' - ' . current_time('d/m/Y H:i'),
+  ));
+
+  if (!$post_id || is_wp_error($post_id)) {
+    therapyflex_redirect_cita('error');
+  }
+
+  update_post_meta($post_id, 'servicio', $servicio);
+  update_post_meta($post_id, 'sede', $sede);
+  update_post_meta($post_id, 'nombre', $nombre);
+  update_post_meta($post_id, 'telefono', $telefono);
+  update_post_meta($post_id, 'correo', $correo);
+  update_post_meta($post_id, 'fecha', $fecha);
+  update_post_meta($post_id, 'hora', $hora);
+  update_post_meta($post_id, 'comentario', $comentario);
+  update_post_meta($post_id, 'origen', $origen);
+
+  $to = array(
+    'contacto@therapyflex.pe',
+    'therapyflex30@gmail.com'
+  );
+
+  $subject_email = 'Nueva solicitud de cita desde Therapy Flex';
+
+  $body = "Nueva solicitud de cita:\n\n";
+  $body .= "Servicio: $servicio\n";
+  $body .= "Sede: $sede\n";
+  $body .= "Nombre del paciente: $nombre\n";
+  $body .= "Telefono: $telefono\n";
+  $body .= "Correo: $correo\n";
+  $body .= "Fecha solicitada: " . ($fecha ? $fecha : 'No indicada') . "\n";
+  $body .= "Hora solicitada: " . ($hora ? $hora : 'No indicada') . "\n";
+  $body .= "Pagina de origen: " . ($origen ? $origen : 'No indicada') . "\n\n";
+  $body .= "Comentario:\n" . ($comentario ? $comentario : 'Sin comentario');
+
+  $headers = array(
+    'Content-Type: text/plain; charset=UTF-8',
+    'From: Therapy Flex <no-reply@therapyflex.pe>',
+    'Reply-To: ' . $correo
+  );
+
+  wp_mail($to, $subject_email, $body, $headers);
+
+  therapyflex_redirect_cita('ok');
+}
+
+add_action('admin_post_nopriv_guardar_cita_therapyflex', 'therapyflex_guardar_cita');
+add_action('admin_post_guardar_cita_therapyflex', 'therapyflex_guardar_cita');
+
+function therapyflex_cita_meta_box() {
+  add_meta_box(
+    'therapyflex_cita_detalle',
+    'Detalle de la cita',
+    'therapyflex_cita_meta_box_callback',
+    'tf_cita',
+    'normal',
+    'high'
+  );
+}
+add_action('add_meta_boxes', 'therapyflex_cita_meta_box');
+
+function therapyflex_cita_meta_box_callback($post) {
+  $fields = array(
+    'Servicio' => get_post_meta($post->ID, 'servicio', true),
+    'Sede' => get_post_meta($post->ID, 'sede', true),
+    'Nombre del paciente' => get_post_meta($post->ID, 'nombre', true),
+    'Telefono' => get_post_meta($post->ID, 'telefono', true),
+    'Correo' => get_post_meta($post->ID, 'correo', true),
+    'Fecha solicitada' => get_post_meta($post->ID, 'fecha', true),
+    'Hora solicitada' => get_post_meta($post->ID, 'hora', true),
+    'Pagina de origen' => get_post_meta($post->ID, 'origen', true),
+  );
+
+  echo '<div style="font-size:15px; line-height:1.7;">';
+  foreach ($fields as $label => $value) {
+    echo '<p><strong>' . esc_html($label) . ':</strong> ' . esc_html($value ? $value : 'No indicado') . '</p>';
+  }
+  echo '<p><strong>Comentario:</strong><br>' . nl2br(esc_html(get_post_meta($post->ID, 'comentario', true))) . '</p>';
+  echo '</div>';
+}
+
+// =======================================
 // SUSCRIPCIONES FOOTER
 // =======================================
 

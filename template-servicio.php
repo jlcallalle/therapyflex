@@ -41,7 +41,7 @@
       <div class="row align-items-center">
         <!-- Izquierda: texto -->
         <div class="col-md-6">
-          <h1> <?php the_title(); ?></h1>
+          <h2> <?php the_title(); ?></h2>
           <div class="contenido-servicio">
             <?php the_content(); ?>
           </div>
@@ -118,48 +118,70 @@
           <div class="col-md-6">
             <!-- <h2>Haga una cita</h2> -->
             <h3 class="title-bar-primary">Haga una cita</h3>
-            <form action="#" method="post">
+            <?php if (isset($_GET['cita']) && 'ok' === $_GET['cita']) : ?>
+              <div class="alert alert-success" role="status">
+                Gracias. Recibimos tu solicitud de cita y nos comunicaremos contigo para confirmar la disponibilidad.
+              </div>
+            <?php elseif (isset($_GET['cita']) && 'error' === $_GET['cita']) : ?>
+              <div class="alert alert-danger" role="alert">
+                No pudimos enviar tu solicitud. Revisa los campos obligatorios e inténtalo nuevamente.
+              </div>
+            <?php endif; ?>
+
+            <form id="formulario-cita" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+              <input type="hidden" name="action" value="guardar_cita_therapyflex">
+              <input type="hidden" name="origen" value="<?php echo esc_url(get_permalink()); ?>">
+              <?php wp_nonce_field('therapyflex_cita_action', 'therapyflex_cita_nonce'); ?>
               <div class="mb-3">
-                <select class="form-control" name="servicio">
+                <label class="screen-reader-text" for="servicio_cita">Servicio</label>
+                <select class="form-control" id="servicio_cita" name="servicio" required>
                   <option value="">Seleccionar servicio</option>
-                  <option value="rehabilitacion">Rehabilitación</option>
+                  <option value="<?php echo esc_attr(get_the_title()); ?>"><?php echo esc_html(get_the_title()); ?></option>
+                  <option value="Rehabilitación">Rehabilitación</option>
                   <!-- <option value="pediatria">Pediatría</option> -->
                   <!-- más opciones -->
                 </select>
               </div>
 
               <div class="mb-3">
-                <select class="form-control" name="sede">
+                <label class="screen-reader-text" for="sede_cita">Sede</label>
+                <select class="form-control" id="sede_cita" name="sede" required>
                   <option value="">Seleccionar sede</option>
-                  <option value="comas">Comas - El Alamo</option>
+                  <option value="Comas - El Alamo">Comas - El Alamo</option>
                   <!-- más opciones -->
                 </select>
               </div>
 
               <div class="mb-3">
-                <input class="form-control" type="text" name="nombre" placeholder="Nombre del paciente *">
+                <label class="screen-reader-text" for="nombre_cita">Nombre del paciente</label>
+                <input class="form-control" id="nombre_cita" type="text" name="nombre" placeholder="Nombre del paciente *" required>
               </div>
 
               <div class="mb-3 row">
                 <div class="col-md-6">
-                  <input class="form-control" type="tel" name="telefono" placeholder="Teléfono *">
+                  <label class="screen-reader-text" for="telefono_cita">Teléfono</label>
+                  <input class="form-control" id="telefono_cita" type="tel" name="telefono" placeholder="Teléfono *" required>
                 </div>
                 <div class="col-md-6">
-                  <input class="form-control" type="email" name="correo" placeholder="Correo *">
+                  <label class="screen-reader-text" for="correo_cita">Correo electrónico</label>
+                  <input class="form-control" id="correo_cita" type="email" name="correo" placeholder="Correo *" required>
                 </div>
               </div>
 
               <div class="mb-3 row">
                 <div class="col-md-6">
-                  <input class="form-control" type="date" name="fecha">
+                  <label class="screen-reader-text" for="fecha_cita">Fecha solicitada</label>
+                  <input class="form-control" id="fecha_cita" type="date" name="fecha">
                 </div>
                 <div class="col-md-6">
-                  <input class="form-control" type="time" name="hora">
+                  <label class="screen-reader-text" for="hora_cita">Hora solicitada</label>
+                  <input class="form-control" id="hora_cita" type="time" name="hora">
                 </div>
               </div>
 
               <div class="mb-3">
-                <textarea class="form-control" name="comentario" rows="3" placeholder="Escriba su comentario"></textarea>
+                <label class="screen-reader-text" for="comentario_cita">Comentario</label>
+                <textarea class="form-control" id="comentario_cita" name="comentario" rows="3" placeholder="Escriba su comentario"></textarea>
               </div>
 
               <button class="btn btn-primary btn-block" type="submit">HACER UNA CITA</button>
