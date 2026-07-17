@@ -2422,6 +2422,33 @@ a {
   color: #444;
 }
 
+.contenido-dolencia {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.dolencia-featured-image {
+  float: right;
+  width: min(38%, 360px);
+  margin: 0 0 20px 28px;
+}
+
+.dolencia-featured-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid rgba(14, 88, 74, 0.16);
+  box-shadow: 0 12px 28px rgba(20, 38, 34, 0.16);
+}
+
+.contenido-dolencia::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .imagen-destacada {
   text-align: center;
   padding-left: 20px;
@@ -2951,6 +2978,12 @@ textarea:focus {
 @media (max-width: 767.98px) {
   .home-hero {
     background-image: url("../images/hero_bg_3-mobile.jpg");
+  }
+
+  .dolencia-featured-image {
+    float: none;
+    width: 100%;
+    margin: 0 0 24px;
   }
 }
 
