@@ -220,6 +220,36 @@ h1, h2, h3, h4, h5,
   font-size: 1.2rem;
 }
 
+.site-footer .social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: #999999;
+  font-size: 22px;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-footer .social-links a:hover,
+.site-footer .social-links a:focus {
+  color: #0e584a;
+  transform: translateY(-1px);
+}
+
+.site-footer .social-icon-tiktok {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+
 .bg-text-line {
   display: inline;
   background: #000;

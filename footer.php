@@ -23,9 +23,15 @@
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
                 <h2 class="footer-heading mb-4">Síguenos</h2>
-                <a href="https://www.facebook.com/therapy.flex.pe" class="pl-0 pr-3" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Therapy Flex"><span class="icon-facebook" aria-hidden="true"></span></a>
-                <a href="https://www.instagram.com/therapy_flex/" class="pl-3 pr-3" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Therapy Flex"><span class="icon-instagram" aria-hidden="true"></span></a>
-                <a href="https://www.tiktok.com/@therapy_flex" class="pl-3 pr-3" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Therapy Flex"><span class="icon-twitter" aria-hidden="true"></span></a>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/therapy.flex.pe" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Therapy Flex"><span class="icon-facebook" aria-hidden="true"></span></a>
+                  <a href="https://www.instagram.com/therapy_flex/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Therapy Flex"><span class="icon-instagram" aria-hidden="true"></span></a>
+                  <a href="https://www.tiktok.com/@therapy_flex" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Therapy Flex">
+                    <svg class="social-icon-tiktok" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                      <path fill="currentColor" d="M16.6 5.82c1.17.84 2.24 1.27 3.4 1.34v3.18c-1.32-.03-2.55-.38-3.67-1.05v5.63c0 3.06-2.2 5.08-5.09 5.08-2.71 0-4.74-1.88-4.74-4.45 0-2.67 2.13-4.57 5.02-4.57.31 0 .59.02.86.07v3.25a3.2 3.2 0 0 0-.92-.14c-.98 0-1.69.57-1.69 1.36 0 .78.63 1.31 1.5 1.31 1.02 0 1.71-.66 1.71-1.91V3.5h3.12c.09.93.25 1.58.5 2.32Z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
