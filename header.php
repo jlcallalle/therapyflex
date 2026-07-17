@@ -9,9 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/assets/css/owl.theme.default.min.css">
+    <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/jquery-ui.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/owl.carousel.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/owl.theme.default.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/jquery-ui.css'); ?>">
+      <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/owl.carousel.min.css'); ?>">
+      <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/owl.theme.default.min.css'); ?>">
+    </noscript>
     <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/assets/css/style.css?ver=' . filemtime(get_template_directory() . '/assets/css/style.css')); ?>">
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" type="image/x-icon">
     <?php if (is_front_page()) : ?>

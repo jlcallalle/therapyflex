@@ -49,6 +49,80 @@ add_filter('pre_get_document_title', 'therapyflex_document_title');
 
 
 // ===============================
+// SEO TECNICO: CANONICAL / ROBOTS
+// ===============================
+function therapyflex_has_seo_plugin() {
+    return defined('WPSEO_VERSION')
+        || defined('RANK_MATH_VERSION')
+        || defined('AIOSEO_VERSION')
+        || defined('SEOPRESS_VERSION')
+        || class_exists('WPSEO_Frontend')
+        || class_exists('RankMath')
+        || class_exists('AIOSEO\\Plugin\\AIOSEO')
+        || class_exists('SEOPress');
+}
+
+function therapyflex_get_canonical_url() {
+    if (is_front_page() || is_home()) {
+        return home_url('/');
+    }
+
+    if (is_singular()) {
+        return get_permalink();
+    }
+
+    if (is_category() || is_tag() || is_tax()) {
+        $term = get_queried_object();
+        return $term ? get_term_link($term) : '';
+    }
+
+    if (is_post_type_archive()) {
+        $post_type = get_query_var('post_type');
+        if (is_array($post_type)) {
+            $post_type = reset($post_type);
+        }
+
+        return $post_type ? get_post_type_archive_link($post_type) : '';
+    }
+
+    return '';
+}
+
+function therapyflex_prepare_canonical() {
+    if (therapyflex_has_seo_plugin()) {
+        return;
+    }
+
+    remove_action('wp_head', 'rel_canonical');
+}
+add_action('wp_head', 'therapyflex_prepare_canonical', 0);
+
+function therapyflex_output_canonical() {
+    if (therapyflex_has_seo_plugin()) {
+        return;
+    }
+
+    $canonical_url = therapyflex_get_canonical_url();
+
+    if (empty($canonical_url) || is_wp_error($canonical_url)) {
+        return;
+    }
+
+    echo '<link rel="canonical" href="' . esc_url($canonical_url) . '">' . "\n";
+}
+add_action('wp_head', 'therapyflex_output_canonical', 5);
+
+function therapyflex_add_sitemap_to_robots($output, $public) {
+    if ('0' === (string) $public || false !== stripos($output, 'Sitemap:')) {
+        return $output;
+    }
+
+    return rtrim($output) . "\n\nSitemap: " . esc_url(home_url('/wp-sitemap.xml')) . "\n";
+}
+add_filter('robots_txt', 'therapyflex_add_sitemap_to_robots', 10, 2);
+
+
+// ===============================
 // SIDEBAR
 // ===============================
 function sidebar(){
