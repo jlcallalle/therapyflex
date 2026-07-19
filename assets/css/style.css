@@ -195,7 +195,8 @@ h1, h2, h3, h4, h5,
 }
 @media (min-width: 768px) {
   .site-footer {
-    padding: 8em 0;
+    /* padding: 8em 0; */
+    padding: 8em 0 6em 0;
   }
 }
 .site-footer .border-top {
@@ -3134,4 +3135,111 @@ textarea:focus {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Footer Google */
+.google-reviews-bar {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    box-sizing: border-box;
+}
+
+.google-reviews-bar__content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    color: #222222;
+    text-decoration: none;
+}
+
+.google-reviews-bar__icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+.google-reviews-bar__rating {
+    color: #101828;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.google-reviews-bar__stars {
+    color: #fbbc04;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.google-reviews-bar__text {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.google-reviews-bar__text strong {
+    color: #101828;
+}
+
+.google-reviews-bar__link {
+    color: #222222;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.google-reviews-bar__content:hover .google-reviews-bar__link {
+    color: #4285f4;
+}
+
+.google-reviews-bar__content:focus-visible {
+    outline: 2px solid #4285f4;
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .google-reviews-bar {
+        padding: 16px 12px;
+    }
+
+    .google-reviews-bar__content {
+        gap: 10px;
+    }
+
+    .google-reviews-bar__text {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .google-reviews-bar__rating {
+        font-size: 18px;
+    }
+
+    .google-reviews-bar__stars {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .google-reviews-bar__text {
+        font-size: 13px;
+    }
+
+    .google-reviews-bar__link {
+        font-size: 11px;
+    }
 }
