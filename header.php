@@ -4,6 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php if (!function_exists('therapyflex_has_seo_plugin') || !therapyflex_has_seo_plugin()) : ?>
+      <meta name="description" content="<?php echo esc_attr(is_front_page() ? 'Therapy Flex es un centro de terapia física y rehabilitación en El Alamo, Comas. Atención en fisioterapia, rehabilitación física, descarga muscular y terapia a domicilio.' : wp_trim_words(wp_strip_all_tags(get_the_excerpt() ?: get_the_content()), 28, '')); ?>">
+    <?php endif; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
@@ -70,7 +73,7 @@
   <?php wp_body_open(); ?>
 
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJXZ5BB7"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJXZ5BB7" title="Google Tag Manager"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   
@@ -86,7 +89,7 @@
 
   <div class="site-wrap">
 
-    <div class="site-mobile-menu">
+    <div class="site-mobile-menu" id="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
           <button type="button" class="icon-close2 js-menu-toggle" aria-label="Cerrar menú" aria-controls="site-mobile-menu" aria-expanded="true"></button>
@@ -103,7 +106,7 @@
           <div class="col-9 col-xl-4">
             <div class="mb-0 site-logo">
               <a href="<?php echo esc_url(home_url('/')); ?>" class="text-white mb-0">
-                <img class="custom-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Therapy Flex">
+                <img class="custom-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Therapy Flex" width="160" height="68">
               </a>
             </div>
           </div>

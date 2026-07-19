@@ -117,7 +117,7 @@
                     if (has_post_thumbnail($page->ID)) {
                       echo get_the_post_thumbnail($page->ID, 'medium', ['class' => 'img-fluid']);
                     } else {
-                      echo '<img src="' . get_template_directory_uri() . '/assets/img/default.png" class="img-fluid" alt="' . esc_attr($page->post_title) . '">';
+                      echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/img/default.png') . '" class="img-fluid" width="550" height="450" alt="' . esc_attr($page->post_title) . '">';
                     }
                     ?>
                   </div>
@@ -327,7 +327,7 @@
               <div class="g-review-card">
                 <div class="g-review-header">
                   <div class="g-avatar">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person1.png'); ?>" alt="Ariadna Carpio" />
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/person1.png'); ?>" width="36" height="36" alt="Ariadna Carpio" />
                   </div>
                   <div class="g-meta">
                     <div class="g-name">Ariadna Carpio</div>
@@ -705,7 +705,7 @@
           <div class="tf-lightbox" id="tfLightbox">
             <button class="tf-lightbox-close" id="tfLightboxClose">&times;</button>
             <button class="tf-lightbox-prev" id="tfPrev">&#10094;</button>
-            <img src="" alt="Imagen ampliada" id="tfLightboxImage" />
+            <img src="" width="900" height="675" alt="Imagen ampliada" id="tfLightboxImage" />
             <button class="tf-lightbox-next" id="tfNext">&#10095;</button>
           </div>
 
@@ -724,7 +724,7 @@
         <div class="row">
 
           <div class="col-12 col-md-8 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.7156287004145!2d-77.06509762313993!3d-11.92486773964676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d186e03e91c3%3A0xf7003b3439dd14a4!2sTherapy%20Flex!5e0!3m2!1ses-419!2spe!4v1753071847486!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Mapa de Therapy Flex en Comas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.7156287004145!2d-77.06509762313993!3d-11.92486773964676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d186e03e91c3%3A0xf7003b3439dd14a4!2sTherapy%20Flex!5e0!3m2!1ses-419!2spe!4v1753071847486!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div class="col-12 col-md-4 mt-4">
             <h5 class="font-weight-bold">Contáctanos...</h5>

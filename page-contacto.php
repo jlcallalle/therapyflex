@@ -145,6 +145,7 @@
     <div class="row">
       <div class="col-12">
         <iframe 
+          title="Mapa de Therapy Flex en Comas"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.7156287004145!2d-77.06509762313993!3d-11.92486773964676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d186e03e91c3%3A0xf7003b3439dd14a4!2sTherapy%20Flex!5e0!3m2!1ses-419!2spe!4v1753071847486!5m2!1ses-419!2spe" 
           width="100%" 
           height="500" 

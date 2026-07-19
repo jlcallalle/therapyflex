@@ -5,7 +5,12 @@
       return;
     }
 
+    let showTimer = window.setTimeout(function () {
+      loader.classList.add("is-visible");
+    }, 350);
+
     function hideLoader() {
+      window.clearTimeout(showTimer);
       loader.classList.add("is-hidden");
       window.setTimeout(function () {
         loader.remove();
