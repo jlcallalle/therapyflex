@@ -106,7 +106,7 @@
                     <p>No se encontraron dolencias para este tipo de servicio.</p>
                   <?php endif;
                 } else {
-                  echo '<p>No se encontró el tipo de servicio correspondiente.</p>';
+                  echo '<p>Este servicio se personaliza segun la evaluacion inicial y los objetivos de recuperacion de cada paciente.</p>';
                 }
               ?>
             </div>
@@ -170,7 +170,6 @@
                   ?>
                       <option value="<?php echo esc_attr(get_the_title()); ?>"><?php echo esc_html(get_the_title()); ?></option>
                   <?php endif; ?>
-                  <option value="Descarga Muscular">Descarga Muscular</option>
                   <option value="Masajes Terapéuticos">Masajes Terapéuticos</option>
                   <option value="Otros">Otros</option>
                 </select>

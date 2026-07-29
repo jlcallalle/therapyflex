@@ -45,7 +45,14 @@
     <div class="block-quick-info-2">
       <div class="container">
         <div class="block-quick-info-2-inner">
-          <div class="row">
+          <div class="row mb-4">
+            <div class="col-lg-8">
+              <span class="section-kicker">Servicios</span>
+              <h2 class="section-title">Tratamientos de fisioterapia en Comas</h2>
+              <p class="section-description">AtenciÃ³n personalizada para aliviar dolor, recuperar movilidad y acompaÃ±arte durante tu rehabilitaciÃ³n.</p>
+            </div>
+          </div>
+          <div class="row services-grid">
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
               <div class="d-flex quick-info-2">
                 <span class="icon icon-home mr-3"></span>
@@ -110,9 +117,9 @@
         <div class="container">
           <div class="row">
             <?php foreach ($child_pages as $page) : ?>
-              <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-4">
+              <div class="mb-4 col-sm-6 col-md-6 col-lg-4">
                 <div class="block-service-1-card">
-                  <div class="thumbnail-link d-block mb-4">
+                  <a class="thumbnail-link d-block" href="<?php echo esc_url(get_permalink($page->ID)); ?>" aria-label="<?php echo esc_attr('Ver ' . $page->post_title); ?>">
                     <?php
                     if (has_post_thumbnail($page->ID)) {
                       echo get_the_post_thumbnail($page->ID, 'medium', [
@@ -123,10 +130,10 @@
                       echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/img/default.png') . '" class="img-fluid" width="550" height="450" alt="' . esc_attr($page->post_title) . '">';
                     }
                     ?>
-                  </div>
+                  </a>
                   <div class="item-content-service">
                     <h3 class="block-service-1-heading mb-3">
-                      <?php echo esc_html($page->post_title); ?>
+                      <a href="<?php echo esc_url(get_permalink($page->ID)); ?>"><?php echo esc_html($page->post_title); ?></a>
                     </h3>
                     <div class="block-service-1-excerpt">
                       <p><?php echo esc_html(wp_trim_words($page->post_excerpt ?: $page->post_content, 20)); ?></p>
