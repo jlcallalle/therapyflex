@@ -4,8 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php if (!function_exists('therapyflex_has_seo_plugin') || !therapyflex_has_seo_plugin()) : ?>
-      <meta name="description" content="<?php echo esc_attr(is_front_page() ? 'Therapy Flex es un centro de terapia física y rehabilitación en El Alamo, Comas. Atención en fisioterapia, rehabilitación física, descarga muscular y terapia a domicilio.' : wp_trim_words(wp_strip_all_tags(get_the_excerpt() ?: get_the_content()), 28, '')); ?>">
+    <?php if (function_exists('therapyflex_output_meta_description')) : ?>
+      <?php therapyflex_output_meta_description(); ?>
     <?php endif; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

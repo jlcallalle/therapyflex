@@ -75,7 +75,10 @@
 
                 <a class="servicio-resumen-card__media" href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr('Ver ' . get_the_title()); ?>">
                         <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
+                            <?php the_post_thumbnail('large', array(
+                                'class' => 'img-fluid',
+                                'alt' => esc_attr(get_the_title() . ' en Therapy Flex Comas'),
+                            )); ?>
                         <?php endif; ?>
                 </a>
             </article>

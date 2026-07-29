@@ -34,6 +34,13 @@ function assets(){
 }
 add_action('wp_enqueue_scripts','assets');
 
+function therapyflex_disable_low_value_head_assets() {
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('wp_head', 'wp_generator');
+}
+add_action('init', 'therapyflex_disable_low_value_head_assets');
+
 
 // ===============================
 // TÍTULO DEL SITIO
@@ -43,9 +50,264 @@ function therapyflex_document_title($title) {
         return 'Therapy Flex | Terapia Física y Rehabilitación en Comas';
     }
 
+    if (is_page('servicios')) {
+        return 'Servicios de Terapia Física en Comas | Therapy Flex';
+    }
+
+    if (is_page('contacto')) {
+        return 'Contacto y Citas de Terapia Física en Comas | Therapy Flex';
+    }
+
+    if (is_page_template('template-servicio.php') || is_singular('dolencia')) {
+        return single_post_title('', false) . ' en Comas | Therapy Flex';
+    }
+
     return $title;
 }
 add_filter('pre_get_document_title', 'therapyflex_document_title');
+
+function therapyflex_get_default_description() {
+    return 'Therapy Flex es un centro de terapia física y rehabilitación en El Alamo, Comas. Atención en fisioterapia, rehabilitación física, descarga muscular y terapia a domicilio.';
+}
+
+function therapyflex_clean_meta_text($text, $limit = 155) {
+    $text = trim(preg_replace('/\s+/', ' ', wp_strip_all_tags((string) $text)));
+
+    if (empty($text)) {
+        return '';
+    }
+
+    if (function_exists('mb_strlen') && mb_strlen($text) > $limit) {
+        $text = mb_substr($text, 0, $limit - 1);
+        $text = preg_replace('/\s+\S*$/', '', $text) . '...';
+    } elseif (strlen($text) > $limit) {
+        $text = substr($text, 0, $limit - 1);
+        $text = preg_replace('/\s+\S*$/', '', $text) . '...';
+    }
+
+    return $text;
+}
+
+function therapyflex_get_seo_description() {
+    if (is_front_page() || is_home()) {
+        return therapyflex_get_default_description();
+    }
+
+    if (is_page('servicios')) {
+        return 'Conoce los servicios de fisioterapia, rehabilitación física, terapia pediátrica, geriátrica y deportiva de Therapy Flex en Comas.';
+    }
+
+    if (is_page('contacto')) {
+        return 'Agenda tu cita en Therapy Flex Comas. Escríbenos por WhatsApp, correo o formulario para recibir atención en terapia física y rehabilitación.';
+    }
+
+    if (is_page_template('template-servicio.php')) {
+        $title = single_post_title('', false);
+        $excerpt = get_the_excerpt();
+
+        if (!empty($excerpt)) {
+            return therapyflex_clean_meta_text($excerpt);
+        }
+
+        return therapyflex_clean_meta_text($title . ' en Therapy Flex Comas. Atención personalizada en terapia física y rehabilitación para recuperar movilidad, aliviar dolor y mejorar tu bienestar.');
+    }
+
+    if (is_singular('dolencia')) {
+        $excerpt = get_the_excerpt();
+
+        if (!empty($excerpt)) {
+            return therapyflex_clean_meta_text($excerpt);
+        }
+
+        return therapyflex_clean_meta_text('Información sobre ' . single_post_title('', false) . ' y opciones de rehabilitación física en Therapy Flex, centro de terapia física en Comas.');
+    }
+
+    if (is_singular()) {
+        $excerpt = get_the_excerpt();
+        $content = get_the_content();
+        $description = therapyflex_clean_meta_text($excerpt ?: $content);
+
+        return $description ?: therapyflex_get_default_description();
+    }
+
+    return therapyflex_get_default_description();
+}
+
+function therapyflex_get_og_image_url() {
+    if (is_singular() && has_post_thumbnail()) {
+        $thumbnail = get_the_post_thumbnail_url(get_queried_object_id(), 'large');
+
+        if ($thumbnail) {
+            return $thumbnail;
+        }
+    }
+
+    return get_template_directory_uri() . '/assets/images/hero_bg_3.jpg';
+}
+
+function therapyflex_output_meta_description() {
+    if (therapyflex_has_seo_plugin()) {
+        return;
+    }
+
+    echo '<meta name="description" content="' . esc_attr(therapyflex_get_seo_description()) . '">' . "\n";
+}
+
+function therapyflex_output_social_meta() {
+    if (therapyflex_has_seo_plugin()) {
+        return;
+    }
+
+    $title = wp_get_document_title();
+    $description = therapyflex_get_seo_description();
+    $url = therapyflex_get_canonical_url() ?: home_url('/');
+    $image = therapyflex_get_og_image_url();
+
+    echo '<meta property="og:locale" content="es_PE">' . "\n";
+    echo '<meta property="og:type" content="' . ((is_singular('post') || is_singular('dolencia')) ? 'article' : 'website') . '">' . "\n";
+    echo '<meta property="og:site_name" content="Therapy Flex">' . "\n";
+    echo '<meta property="og:title" content="' . esc_attr($title) . '">' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr($description) . '">' . "\n";
+    echo '<meta property="og:url" content="' . esc_url($url) . '">' . "\n";
+    echo '<meta property="og:image" content="' . esc_url($image) . '">' . "\n";
+    echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    echo '<meta name="twitter:title" content="' . esc_attr($title) . '">' . "\n";
+    echo '<meta name="twitter:description" content="' . esc_attr($description) . '">' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url($image) . '">' . "\n";
+}
+add_action('wp_head', 'therapyflex_output_social_meta', 6);
+
+function therapyflex_get_business_schema() {
+    return array(
+        '@type' => array('LocalBusiness', 'MedicalBusiness'),
+        '@id' => home_url('/#organization'),
+        'name' => 'Therapy Flex',
+        'url' => home_url('/'),
+        'logo' => get_template_directory_uri() . '/assets/images/logo.png',
+        'image' => therapyflex_get_og_image_url(),
+        'description' => therapyflex_get_default_description(),
+        'telephone' => '+51920830776',
+        'email' => 'contacto@therapyflex.pe',
+        'priceRange' => '$$',
+        'address' => array(
+            '@type' => 'PostalAddress',
+            'streetAddress' => 'Av Trapiche, Mz E2 Lt 26, Calle 24, Urb El Alamo',
+            'addressLocality' => 'Comas',
+            'addressRegion' => 'Lima',
+            'addressCountry' => 'PE',
+        ),
+        'areaServed' => array(
+            '@type' => 'City',
+            'name' => 'Comas',
+        ),
+        'openingHoursSpecification' => array(
+            array(
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'),
+                'opens' => '09:00',
+                'closes' => '19:00',
+            ),
+            array(
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => 'Saturday',
+                'opens' => '08:00',
+                'closes' => '16:00',
+            ),
+        ),
+        'sameAs' => array(
+            'https://www.facebook.com/therapy.flex.pe',
+            'https://www.instagram.com/therapy_flex/',
+            'https://www.tiktok.com/@therapy_flex',
+        ),
+    );
+}
+
+function therapyflex_output_json_ld() {
+    if (therapyflex_has_seo_plugin()) {
+        return;
+    }
+
+    $canonical = therapyflex_get_canonical_url() ?: home_url('/');
+    $graph = array(
+        therapyflex_get_business_schema(),
+        array(
+            '@type' => 'WebSite',
+            '@id' => home_url('/#website'),
+            'url' => home_url('/'),
+            'name' => 'Therapy Flex',
+            'inLanguage' => 'es-PE',
+            'publisher' => array('@id' => home_url('/#organization')),
+        ),
+        array(
+            '@type' => 'WebPage',
+            '@id' => trailingslashit($canonical) . '#webpage',
+            'url' => $canonical,
+            'name' => wp_get_document_title(),
+            'description' => therapyflex_get_seo_description(),
+            'inLanguage' => 'es-PE',
+            'isPartOf' => array('@id' => home_url('/#website')),
+            'about' => array('@id' => home_url('/#organization')),
+        ),
+    );
+
+    if (is_page_template('template-servicio.php')) {
+        $graph[] = array(
+            '@type' => 'Service',
+            '@id' => trailingslashit($canonical) . '#service',
+            'name' => single_post_title('', false),
+            'description' => therapyflex_get_seo_description(),
+            'provider' => array('@id' => home_url('/#organization')),
+            'areaServed' => array(
+                '@type' => 'City',
+                'name' => 'Comas',
+            ),
+            'serviceType' => 'Terapia física y rehabilitación',
+        );
+    }
+
+    if (!is_front_page()) {
+        $breadcrumbs = array(
+            array(
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Inicio',
+                'item' => home_url('/'),
+            ),
+        );
+
+        if (is_page_template('template-servicio.php')) {
+            $servicios = get_page_by_path('servicios');
+
+            if ($servicios) {
+                $breadcrumbs[] = array(
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Servicios',
+                    'item' => get_permalink($servicios),
+                );
+            }
+        }
+
+        $breadcrumbs[] = array(
+            '@type' => 'ListItem',
+            'position' => count($breadcrumbs) + 1,
+            'name' => single_post_title('', false) ?: wp_get_document_title(),
+            'item' => $canonical,
+        );
+
+        $graph[] = array(
+            '@type' => 'BreadcrumbList',
+            '@id' => trailingslashit($canonical) . '#breadcrumb',
+            'itemListElement' => $breadcrumbs,
+        );
+    }
+
+    echo '<script type="application/ld+json">' . wp_json_encode(array(
+        '@context' => 'https://schema.org',
+        '@graph' => $graph,
+    ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
+}
+add_action('wp_head', 'therapyflex_output_json_ld', 20);
 
 
 // ===============================

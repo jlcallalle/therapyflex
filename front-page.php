@@ -115,7 +115,10 @@
                   <div class="thumbnail-link d-block mb-4">
                     <?php
                     if (has_post_thumbnail($page->ID)) {
-                      echo get_the_post_thumbnail($page->ID, 'medium', ['class' => 'img-fluid']);
+                      echo get_the_post_thumbnail($page->ID, 'medium', [
+                        'class' => 'img-fluid',
+                        'alt' => esc_attr($page->post_title . ' en Therapy Flex Comas'),
+                      ]);
                     } else {
                       echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/img/default.png') . '" class="img-fluid" width="550" height="450" alt="' . esc_attr($page->post_title) . '">';
                     }
@@ -612,7 +615,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/descarga-thumb.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/descarga.jpg"
-                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  alt="Descarga muscular con pistola de masaje en Therapy Flex Comas"
                   loading="lazy"
                   width="420"
                   height="560"
@@ -644,7 +647,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/descarga_run-thumb.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/descarga_run.jpg"
-                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  alt="Descarga muscular y fortalecimiento para corredor en Therapy Flex Comas"
                   loading="lazy"
                   width="420"
                   height="744"
@@ -658,7 +661,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/fractura_maleolo-thumb.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/fractura_maleolo.jpg"
-                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  alt="Rehabilitación de fractura de maléolo en Therapy Flex Comas"
                   loading="lazy"
                   width="420"
                   height="744"
@@ -672,7 +675,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/masaje-thumb.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/masaje.jpg"
-                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  alt="Masaje terapéutico para tensión cervical en Therapy Flex Comas"
                   loading="lazy"
                   width="420"
                   height="560"
@@ -686,7 +689,7 @@
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/fortalecimiento-thumb.jpg"
                   data-full="<?php echo get_template_directory_uri(); ?>/assets/images/fortalecimiento.jpg"
-                  alt="Ubicación de Therapy Flex en Urb. El Álamo, Retablo, Comas"
+                  alt="Fortalecimiento de cuádriceps para rehabilitación de rodilla en Therapy Flex Comas"
                   loading="lazy"
                   width="420"
                   height="237"
@@ -703,10 +706,10 @@
 
           <!-- Lightbox -->
           <div class="tf-lightbox" id="tfLightbox">
-            <button class="tf-lightbox-close" id="tfLightboxClose">&times;</button>
-            <button class="tf-lightbox-prev" id="tfPrev">&#10094;</button>
+            <button class="tf-lightbox-close" id="tfLightboxClose" aria-label="Cerrar imagen ampliada">&times;</button>
+            <button class="tf-lightbox-prev" id="tfPrev" aria-label="Ver imagen anterior">&#10094;</button>
             <img src="" width="900" height="675" alt="Imagen ampliada" id="tfLightboxImage" />
-            <button class="tf-lightbox-next" id="tfNext">&#10095;</button>
+            <button class="tf-lightbox-next" id="tfNext" aria-label="Ver imagen siguiente">&#10095;</button>
           </div>
 
         </div>

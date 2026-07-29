@@ -51,7 +51,10 @@
         <div class="col-md-6">
           <?php if (has_post_thumbnail()) : ?>
             <div class="imagen-destacada">
-              <?php the_post_thumbnail('large', ['class' => 'img-fluid rounded']); ?>
+              <?php the_post_thumbnail('large', [
+                'class' => 'img-fluid rounded',
+                'alt' => esc_attr(get_the_title() . ' en Therapy Flex Comas'),
+              ]); ?>
             </div>
           <?php endif; ?>
         </div>
