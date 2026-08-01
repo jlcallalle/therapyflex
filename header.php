@@ -114,13 +114,13 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Inicio</span></a></li>
+                <li class="<?php echo is_front_page() ? 'active' : ''; ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Inicio</span></a></li>
                 <!-- <li><a href="#servicios"><span>Servicios</span></a></li> -->
-                <li><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
-                <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>"><span>Sobre</span></a></li>
+                <li class="<?php echo is_page('servicios') || is_page_template('template-servicio.php') ? 'active' : ''; ?>"><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
+                <li class="<?php echo is_page('nosotros') ? 'active' : ''; ?>"><a href="<?php echo esc_url(home_url('/nosotros')); ?>"><span>Nosotros</span></a></li>
                 <li><a href="<?php echo esc_url(home_url('/#galeria')); ?>"><span>Blog</span></a></li>
                 <!-- <li><a href="#contacto"><span>Contacto</span></a></li> -->
-                <li><a href="<?php echo esc_url( home_url('/contacto') ); ?>"><span>Contacto</span></a></li>
+                <li class="<?php echo is_page('contacto') ? 'active' : ''; ?>"><a href="<?php echo esc_url( home_url('/contacto') ); ?>"><span>Contacto</span></a></li>
               </ul>
             </nav>
           </div>

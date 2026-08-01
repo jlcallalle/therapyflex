@@ -45,14 +45,7 @@
     <div class="block-quick-info-2">
       <div class="container">
         <div class="block-quick-info-2-inner">
-          <div class="row mb-4">
-            <div class="col-lg-8">
-              <span class="section-kicker">Servicios</span>
-              <h2 class="section-title">Tratamientos de fisioterapia en Comas</h2>
-              <p class="section-description">AtenciÃ³n personalizada para aliviar dolor, recuperar movilidad y acompaÃ±arte durante tu rehabilitaciÃ³n.</p>
-            </div>
-          </div>
-          <div class="row services-grid">
+          <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 mb-lg-0">
               <div class="d-flex quick-info-2">
                 <span class="icon icon-home mr-3"></span>
@@ -115,7 +108,14 @@
       ?>
       <div id="servicios" class="block-services-1 py-5">
         <div class="container">
-          <div class="row">
+          <div class="row mb-4">
+            <div class="col-lg-8">
+              <span class="section-kicker">Servicios</span>
+              <h2 class="section-title">Tratamientos de fisioterapia en Comas</h2>
+              <p class="section-description">Atencion personalizada para aliviar dolor, recuperar movilidad y acompanarte durante tu rehabilitacion.</p>
+            </div>
+          </div>
+          <div class="row services-grid">
             <?php foreach ($child_pages as $page) : ?>
               <div class="mb-4 col-sm-6 col-md-6 col-lg-4">
                 <div class="block-service-1-card">
@@ -141,7 +141,7 @@
                     <!-- <p>
                       <a href="<?php // echo get_permalink($page->ID); ?>" class="btn btn-outline-primary btn-sm btn-pill">Ir al servicio</a>
                     </p> -->
-                     <p><a href="<?php echo get_permalink($page->ID); ?>" class="d-inline-flex align-items-center block-service-1-more"><span>Ver más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
+                    <p><a href="<?php echo esc_url(get_permalink($page->ID)); ?>" class="d-inline-flex align-items-center block-service-1-more"><span>Ver más</span> <span class="icon-keyboard_arrow_right icon"></span></a></p>
                   </div>
                 </div>
               </div>

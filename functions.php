@@ -54,6 +54,10 @@ function therapyflex_document_title($title) {
         return 'Servicios de Terapia Física en Comas | Therapy Flex';
     }
 
+    if (is_page('nosotros')) {
+        return 'Nosotros | Therapy Flex Comas y Lic. Liz Tananta';
+    }
+
     if (is_page('contacto')) {
         return 'Contacto y Citas de Terapia Física en Comas | Therapy Flex';
     }
@@ -95,6 +99,10 @@ function therapyflex_get_seo_description() {
 
     if (is_page('servicios')) {
         return 'Conoce los servicios de fisioterapia, rehabilitación física, terapia pediátrica, geriátrica y deportiva de Therapy Flex en Comas.';
+    }
+
+    if (is_page('nosotros')) {
+        return 'Conoce Therapy Flex Comas y el enfoque profesional de la Lic. Liz Tananta en terapia fisica, rehabilitacion y atencion personalizada.';
     }
 
     if (is_page('contacto')) {

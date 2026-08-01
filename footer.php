@@ -6,7 +6,7 @@
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
                 <h2 class="footer-heading mb-4">Enlaces</h2>
                 <ul class="list-unstyled">
-                  <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>">Nosotros</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/nosotros')); ?>">Nosotros</a></li>
                   <li><a href="<?php echo esc_url(home_url('/servicios')); ?>">Servicios</a></li>
                   <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>">Testimonios</a></li>
                   <li><a href="<?php echo esc_url(home_url('/contacto')); ?>">Contáctanos</a></li>
@@ -84,7 +84,7 @@
     global $wpdb;
 
     $google_reviews_rating = 5.0;
-    $google_reviews_count = 51;
+    $google_reviews_count = 55;
     $google_reviews_page_details = get_option('trustindex-google-page-details');
 
     if (is_array($google_reviews_page_details)) {

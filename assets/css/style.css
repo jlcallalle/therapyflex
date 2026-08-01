@@ -2549,6 +2549,250 @@ a {
     width: 100%;
 }
 
+/* Pagina Nosotros */
+.page-nosotros .site-blocks-cover {
+  background-position: center 42%;
+}
+
+.page-nosotros .title-banner p {
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+.page-nosotros .section-kicker {
+  display: inline-flex;
+  color: #0e584a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.nosotros-intro {
+  background: #fff;
+}
+
+.nosotros-intro p,
+.nosotros-bio p,
+.nosotros-cta p {
+  color: #6b7471;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.nosotros-media {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(14, 88, 74, 0.16);
+}
+
+.nosotros-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nosotros-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.nosotros-link {
+  color: #0e584a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nosotros-link:hover {
+  color: #178e79;
+  text-decoration: none;
+}
+
+.nosotros-bio {
+  background: #f7faf9;
+}
+
+.nosotros-tecnologia {
+  background: #fff;
+  padding-top: 32px;
+}
+
+.nosotros-tecnologia h2 {
+  color: #1f7fbf;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.18;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.nosotros-tecnologia p {
+  color: #26314a;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.nosotros-tech-list {
+  margin-top: 34px;
+}
+
+.nosotros-tech-list h3,
+.nosotros-tech-note h3 {
+  color: #00508f;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.nosotros-tech-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 610px;
+}
+
+.nosotros-tech-list li {
+  position: relative;
+  color: #30384e;
+  font-size: 16px;
+  line-height: 1.45;
+  padding: 12px 0 12px 24px;
+  border-bottom: 1px solid #dcdfe3;
+}
+
+.nosotros-tech-list li:before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: #1f7fbf;
+}
+
+.nosotros-tech-note {
+  margin-top: 34px;
+  max-width: 610px;
+}
+
+.nosotros-tech-note p {
+  margin-bottom: 0;
+}
+
+.nosotros-tech-media {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.nosotros-tech-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nosotros-bio-card {
+  background: #fff;
+  border: 1px solid #e2ebe8;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 12px 36px rgba(14, 88, 74, 0.08);
+}
+
+.nosotros-bio-card h2 {
+  color: #111;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.nosotros-role {
+  color: #0e584a !important;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.nosotros-values {
+  display: grid;
+  gap: 18px;
+}
+
+.nosotros-value {
+  display: flex;
+  gap: 18px;
+  background: #fff;
+  border: 1px solid #e2ebe8;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.nosotros-value .icon-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  color: #fff;
+  background: #0e584a;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.nosotros-value h3 {
+  color: #111;
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.nosotros-value p {
+  margin-bottom: 0;
+}
+
+.nosotros-cta {
+  background: #fff;
+}
+
+.nosotros-cta h2 {
+  color: #111;
+  font-size: 30px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767.98px) {
+  .nosotros-tecnologia h2 {
+    font-size: 30px;
+  }
+
+  .nosotros-tech-list h3,
+  .nosotros-tech-note h3 {
+    font-size: 22px;
+  }
+
+  .nosotros-tech-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .nosotros-bio-card,
+  .nosotros-value {
+    padding: 22px;
+  }
+
+  .nosotros-value {
+    gap: 14px;
+  }
+
+  .nosotros-cta .text-lg-right {
+    text-align: left !important;
+  }
+}
+
 /* tipo servivios */
 .contenido-servicio .wp-block-image img {
     width: 100%;
