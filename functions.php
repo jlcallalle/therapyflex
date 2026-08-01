@@ -520,11 +520,12 @@ function therapyflex_guardar_contacto() {
   
   $nombres   = sanitize_text_field($_POST['nombres'] ?? '');
   $apellidos = sanitize_text_field($_POST['apellidos'] ?? '');
+  $celular   = sanitize_text_field($_POST['celular'] ?? '');
   $email     = sanitize_email($_POST['email'] ?? '');
   $subject   = sanitize_text_field($_POST['subject'] ?? '');
   $message   = sanitize_textarea_field($_POST['message'] ?? '');
 
-  if (empty($nombres) || empty($apellidos) || empty($email) || !is_email($email) || empty($subject) || empty($message)) {
+  if (empty($nombres) || empty($apellidos) || empty($celular) || empty($email) || !is_email($email) || empty($subject) || empty($message)) {
     wp_redirect(add_query_arg('contacto', 'error', wp_get_referer()));
     exit;
   }
@@ -539,6 +540,7 @@ function therapyflex_guardar_contacto() {
   if ($post_id) {
     update_post_meta($post_id, 'nombres', $nombres);
     update_post_meta($post_id, 'apellidos', $apellidos);
+    update_post_meta($post_id, 'celular', $celular);
     update_post_meta($post_id, 'email', $email);
     update_post_meta($post_id, 'asunto', $subject);
     update_post_meta($post_id, 'mensaje', $message);
@@ -553,6 +555,7 @@ function therapyflex_guardar_contacto() {
 
     $body = "Has recibido un nuevo contacto:\n\n";
     $body .= "Nombre: $nombres $apellidos\n";
+    $body .= "Celular: $celular\n";
     $body .= "Email: $email\n";
     $body .= "Asunto: $subject\n\n";
     $body .= "Mensaje:\n$message";
@@ -595,6 +598,7 @@ add_action('add_meta_boxes', 'therapyflex_contacto_meta_box');
 function therapyflex_contacto_meta_box_callback($post) {
   $nombres   = get_post_meta($post->ID, 'nombres', true);
   $apellidos = get_post_meta($post->ID, 'apellidos', true);
+  $celular   = get_post_meta($post->ID, 'celular', true);
   $email     = get_post_meta($post->ID, 'email', true);
   $asunto    = get_post_meta($post->ID, 'asunto', true);
   $mensaje   = get_post_meta($post->ID, 'mensaje', true);
@@ -602,6 +606,7 @@ function therapyflex_contacto_meta_box_callback($post) {
   echo '<div style="font-size:15px; line-height:1.7;">';
   echo '<p><strong>Nombres:</strong> ' . esc_html($nombres) . '</p>';
   echo '<p><strong>Apellidos:</strong> ' . esc_html($apellidos) . '</p>';
+  echo '<p><strong>Celular:</strong> ' . esc_html($celular) . '</p>';
   echo '<p><strong>Email:</strong> ' . esc_html($email) . '</p>';
   echo '<p><strong>Asunto:</strong> ' . esc_html($asunto) . '</p>';
   echo '<p><strong>Mensaje:</strong><br>' . nl2br(esc_html($mensaje)) . '</p>';

@@ -62,6 +62,13 @@
 
           <div class="row form-group">
             <div class="col-md-12">
+              <label class="text-black" for="celular">Celular</label>
+              <input type="tel" id="celular" name="celular" class="form-control" inputmode="tel" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
               <label class="text-black" for="email">Email</label>
               <input type="email" id="email" name="email" class="form-control" required>
             </div>
