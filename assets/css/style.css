@@ -2622,7 +2622,7 @@ a {
 }
 
 .nosotros-tecnologia h2 {
-  color: #1f7fbf;
+  color: #0e584a;
   font-size: 38px;
   font-weight: 400;
   line-height: 1.18;
@@ -2642,7 +2642,7 @@ a {
 
 .nosotros-tech-list h3,
 .nosotros-tech-note h3 {
-  color: #00508f;
+  color: #0e584a;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
@@ -2670,7 +2670,7 @@ a {
   position: absolute;
   left: 0;
   top: 12px;
-  color: #1f7fbf;
+  color: #0e584a;
 }
 
 .nosotros-tech-note {
@@ -2714,6 +2714,30 @@ a {
   color: #0e584a !important;
   font-weight: 700;
   margin-bottom: 18px;
+}
+
+.nosotros-university {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 18px;
+  border-top: 1px solid #e2ebe8;
+}
+
+.nosotros-university span {
+  color: #6b7471;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.nosotros-university img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
 }
 
 .nosotros-values {

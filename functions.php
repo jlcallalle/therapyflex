@@ -55,7 +55,7 @@ function therapyflex_document_title($title) {
     }
 
     if (is_page('nosotros')) {
-        return 'Nosotros | Therapy Flex Comas y Lic. Liz Tananta';
+        return 'Nosotros | Lic. Liz Mary Tananta Panduro - Therapy Flex Comas';
     }
 
     if (is_page('contacto')) {
@@ -102,7 +102,7 @@ function therapyflex_get_seo_description() {
     }
 
     if (is_page('nosotros')) {
-        return 'Conoce Therapy Flex Comas y el enfoque profesional de la Lic. Liz Tananta en terapia fisica, rehabilitacion y atencion personalizada.';
+        return 'Conoce a la Lic. Liz Mary Tananta Panduro y el enfoque de Therapyflex en terapia fisica, rehabilitacion y tratamientos basados en evidencia.';
     }
 
     if (is_page('contacto')) {

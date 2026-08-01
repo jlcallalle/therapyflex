@@ -11,7 +11,7 @@
             <div class="wrapper-slider">
               <div class="title-banner mb-4">
                 <h1>Nosotros</h1>
-                <p class="intro-text">Conoce Therapy Flex y el enfoque de atenci&oacute;n de la Lic. Liz Tananta.</p>
+                <p class="intro-text">Conoce Therapy Flex y el enfoque de atenci&oacute;n de la Lic. Liz Tananta Panduro.</p>
               </div>
             </div>
           </div>
@@ -54,11 +54,21 @@
         <div class="col-lg-5 mb-4 mb-lg-0">
           <div class="nosotros-bio-card">
             <span class="section-kicker">Direccion profesional</span>
-            <h2>Lic. Liz Tananta</h2>
-            <p class="nosotros-role">Licenciada en terapia fisica y rehabilitacion</p>
+            <h2>Lic. Liz Mary Tananta Panduro</h2>
+            <p class="nosotros-role">Terapia F&iacute;sica y Rehabilitaci&oacute;n</p>
             <p>
-              Liz Tananta acompa&ntilde;a a los pacientes de Therapy Flex con una atencion clara, humana y orientada a objetivos. Su enfoque combina evaluacion, terapia manual, ejercicio terapeutico y educacion del paciente para favorecer una recuperacion progresiva.
+              Licenciada egresada de la <strong>Universidad Norbert Wiener</strong>. Especialista en Terapia Musculoesquel&eacute;tica y Terapia Traumatol&oacute;gica, con Diplomado en Terapia Manual y Ortopedia por el Centro de Innovaci&oacute;n.
             </p>
+            <p>
+              Especializada en el abordaje integral para la recuperaci&oacute;n de la movilidad, alivio del dolor y la mejora continua de la calidad de vida de cada paciente, seg&uacute;n sus necesidades espec&iacute;ficas.
+            </p>
+            <p>
+              En <strong>Therapyflex</strong>, nos destacamos por un enfoque marcadamente humano, combinando la empat&iacute;a en el trato con un riguroso an&aacute;lisis cl&iacute;nico. Dise&ntilde;amos y brindamos planes de tratamiento personalizados estrictamente alineados a la <strong>evidencia cient&iacute;fica</strong> m&aacute;s actualizada.
+            </p>
+            <div class="nosotros-university">
+              <span>Formaci&oacute;n universitaria</span>
+              <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/unw-logo.svg'); ?>" alt="Universidad Norbert Wiener" width="220" height="64" loading="lazy">
+            </div>
           </div>
         </div>
         <div class="col-lg-7">
@@ -130,7 +140,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-8">
-          <h2>Recibe una evaluacion en Therapy Flex</h2>
+          <h2>Recibe una evaluacion gratuita en Therapy Flex</h2>
           <p>Agenda una cita en nuestra sede de Comas y cuentanos que molestia o lesion deseas tratar.</p>
         </div>
         <div class="col-lg-4 text-lg-right">
