@@ -400,6 +400,13 @@ function therapyflex_disable_users_sitemap($provider, $name) {
 }
 add_filter('wp_sitemaps_add_provider', 'therapyflex_disable_users_sitemap', 10, 2);
 
+function therapyflex_exclude_tipo_servicio_from_sitemaps($taxonomies) {
+    unset($taxonomies['tipo_servicio']);
+
+    return $taxonomies;
+}
+add_filter('wp_sitemaps_taxonomies', 'therapyflex_exclude_tipo_servicio_from_sitemaps');
+
 
 // ===============================
 // SIDEBAR
@@ -480,6 +487,7 @@ function crear_taxonomia_tipo_servicio() {
       'label' => 'Tipo de Servicio',
       'rewrite' => array('slug' => 'tipo-servicio'),
       'hierarchical' => true,
+      'publicly_queryable' => false,
       'show_in_rest' => true,
     )
   );

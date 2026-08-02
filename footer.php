@@ -84,7 +84,7 @@
     global $wpdb;
 
     $google_reviews_rating = 5.0;
-    $google_reviews_count = 55;
+    $google_reviews_count = 57;
     $google_reviews_page_details = get_option('trustindex-google-page-details');
 
     if (is_array($google_reviews_page_details)) {
