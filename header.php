@@ -118,7 +118,7 @@
                 <!-- <li><a href="#servicios"><span>Servicios</span></a></li> -->
                 <li class="<?php echo is_page('servicios') || is_page_template('template-servicio.php') ? 'active' : ''; ?>"><a href="<?php echo esc_url(home_url('/servicios')); ?>"><span>Servicios</span></a></li>
                 <li class="<?php echo is_page('nosotros') ? 'active' : ''; ?>"><a href="<?php echo esc_url(home_url('/nosotros')); ?>"><span>Nosotros</span></a></li>
-                <li><a href="<?php echo esc_url(home_url('/#galeria')); ?>"><span>Blog</span></a></li>
+                <li class="<?php echo is_page('blog') || is_singular('post') ? 'active' : ''; ?>"><a href="<?php echo esc_url(home_url('/blog')); ?>"><span>Blog</span></a></li>
                 <!-- <li><a href="#contacto"><span>Contacto</span></a></li> -->
                 <li class="<?php echo is_page('contacto') ? 'active' : ''; ?>"><a href="<?php echo esc_url( home_url('/contacto') ); ?>"><span>Contacto</span></a></li>
               </ul>
