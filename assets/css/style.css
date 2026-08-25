@@ -2945,6 +2945,61 @@ a {
   height: auto;
 }
 
+.contenido-post__body > img,
+.contenido-post__body p > img {
+  display: block;
+  float: left;
+  width: auto !important;
+  max-width: min(42%, 480px);
+  height: auto !important;
+  margin: 6px 34px 24px 0;
+  border-radius: 6px;
+}
+
+.contenido-post__body figure,
+.contenido-post__body .wp-block-image {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.contenido-post__body .alignleft,
+.contenido-post__body figure.alignleft,
+.contenido-post__body .wp-block-image.alignleft {
+  float: left;
+  max-width: min(42%, 480px);
+  margin: 6px 34px 24px 0;
+}
+
+.contenido-post__body .alignright,
+.contenido-post__body figure.alignright,
+.contenido-post__body .wp-block-image.alignright {
+  float: right;
+  max-width: min(42%, 480px);
+  margin: 6px 0 24px 34px;
+}
+
+.contenido-post__body .aligncenter,
+.contenido-post__body figure.aligncenter,
+.contenido-post__body .wp-block-image.aligncenter {
+  display: block;
+  max-width: 680px;
+  margin: 30px auto;
+}
+
+.contenido-post__body figure img,
+.contenido-post__body .wp-block-image img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  border-radius: 6px;
+}
+
+.contenido-post__body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .nosotros-values {
   display: grid;
   gap: 18px;
@@ -3016,6 +3071,27 @@ a {
   .contenido-post__image {
     max-width: 100%;
     margin-bottom: 24px;
+  }
+
+  .contenido-post__body > img,
+  .contenido-post__body p > img,
+  .contenido-post__body .alignleft,
+  .contenido-post__body .alignright,
+  .contenido-post__body figure.alignleft,
+  .contenido-post__body figure.alignright,
+  .contenido-post__body .wp-block-image.alignleft,
+  .contenido-post__body .wp-block-image.alignright {
+    float: none;
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0 0 24px;
+  }
+
+  .contenido-post__body .aligncenter,
+  .contenido-post__body figure.aligncenter,
+  .contenido-post__body .wp-block-image.aligncenter {
+    max-width: 100%;
+    margin: 0 0 24px;
   }
 
   .nosotros-tecnologia h2 {
@@ -3562,8 +3638,11 @@ a {
 }
 
 #tfLightboxImage {
+  width: auto;
+  height: auto;
   max-width: 90%;
   max-height: 90%;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }

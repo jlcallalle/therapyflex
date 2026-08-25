@@ -715,7 +715,7 @@
           <div class="tf-lightbox" id="tfLightbox">
             <button class="tf-lightbox-close" id="tfLightboxClose" aria-label="Cerrar imagen ampliada">&times;</button>
             <button class="tf-lightbox-prev" id="tfPrev" aria-label="Ver imagen anterior">&#10094;</button>
-            <img src="" width="900" height="675" alt="Imagen ampliada" id="tfLightboxImage" />
+            <img src="" alt="Imagen ampliada" id="tfLightboxImage" />
             <button class="tf-lightbox-next" id="tfNext" aria-label="Ver imagen siguiente">&#10095;</button>
           </div>
 

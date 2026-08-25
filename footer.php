@@ -37,7 +37,7 @@
           </div>
           <div class="col-lg-4" id="suscripcion-footer">
             <h2 class="footer-heading mb-4">Suscríbete</h2>
-            <p>Suscríbete a nuestro blog y recibe el 20% de descuento en tu primera cita.</p>
+            <p>Suscríbete a nuestro blog y recibe el 10% de descuento en tu primera cita.</p>
             
             <?php if (isset($_GET['suscripcion']) && $_GET['suscripcion'] === 'ok') : ?>
               <div class="alert alert-success py-2">
@@ -71,20 +71,13 @@
 
           </div>
         </div>
-        <div class="row pt-5 mt-5">
-          <div class="col-12 text-md-center text-left">
-            <p>
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-            </p>
-          </div>
-        </div>
       </div>
     </footer>
   <?php
     global $wpdb;
 
     $google_reviews_rating = 5.0;
-    $google_reviews_count = 57;
+    $google_reviews_count = 62;
     $google_reviews_page_details = get_option('trustindex-google-page-details');
 
     if (is_array($google_reviews_page_details)) {
@@ -112,6 +105,8 @@
         $google_reviews_rating = round((float) $google_reviews_data->average_rating, 1);
       }
     }
+
+    $google_reviews_count = 62;
 
     $google_reviews_text = sprintf(
       _n(
