@@ -75,39 +75,67 @@
       </div>
     </footer>
   <?php
-    global $wpdb;
-
+    // Valoracion y conteo de resenas de Google para el footer, obtenidos de
+    // la Places API (New) - la misma fuente que usa el CRM
+    // (crm.therapyflex.pe/reviews, scripts/sync-google-reviews.mjs). Se
+    // cachea con un transient de WordPress (12 horas) para no gastar cuota
+    // de la API en cada visita al sitio. Requiere las constantes
+    // GOOGLE_PLACES_API_KEY y GOOGLE_PLACES_ID definidas en wp-config.php.
     $google_reviews_rating = 5.0;
     $google_reviews_count = 65;
-    $google_reviews_page_details = get_option('trustindex-google-page-details');
+    $google_reviews_resolved = false;
 
-    if (is_array($google_reviews_page_details)) {
-      if (!empty($google_reviews_page_details['rating_number'])) {
-        $google_reviews_count = (int) $google_reviews_page_details['rating_number'];
-      }
+    $google_reviews_cache = get_transient('therapyflex_google_reviews_summary');
 
-      if (!empty($google_reviews_page_details['rating_score'])) {
-        $google_reviews_rating = round((float) $google_reviews_page_details['rating_score'], 1);
-      }
-    }
-
-    $google_reviews_table = $wpdb->prefix . 'trustindex_google_reviews';
-    $google_reviews_table_exists = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $google_reviews_table));
-
-    if (!is_array($google_reviews_page_details) && $google_reviews_table_exists === $google_reviews_table) {
-      $google_reviews_data = $wpdb->get_row(
-        "SELECT COUNT(*) AS total_reviews, AVG(rating) AS average_rating
-        FROM {$google_reviews_table}
-        WHERE hidden = 0 AND rating IS NOT NULL"
+    if (is_array($google_reviews_cache) && !empty($google_reviews_cache['count'])) {
+      $google_reviews_count = (int) $google_reviews_cache['count'];
+      $google_reviews_rating = (float) $google_reviews_cache['rating'];
+      $google_reviews_resolved = true;
+    } elseif (defined('GOOGLE_PLACES_API_KEY') && defined('GOOGLE_PLACES_ID') && GOOGLE_PLACES_API_KEY && GOOGLE_PLACES_ID) {
+      $places_response = wp_remote_get(
+        'https://places.googleapis.com/v1/places/' . rawurlencode(GOOGLE_PLACES_ID) . '?languageCode=es',
+        array(
+          'headers' => array(
+            'X-Goog-Api-Key' => GOOGLE_PLACES_API_KEY,
+            // Solo se piden estos dos campos: cada campo adicional puede
+            // sumar costo (ver README del CRM, seccion "Reseñas de Google").
+            'X-Goog-FieldMask' => 'rating,userRatingCount'
+          ),
+          'timeout' => 8
+        )
       );
 
-      if ($google_reviews_data && (int) $google_reviews_data->total_reviews > 0) {
-        $google_reviews_count = (int) $google_reviews_data->total_reviews;
-        $google_reviews_rating = round((float) $google_reviews_data->average_rating, 1);
+      if (!is_wp_error($places_response) && (int) wp_remote_retrieve_response_code($places_response) === 200) {
+        $places_data = json_decode(wp_remote_retrieve_body($places_response), true);
+
+        if (!empty($places_data['userRatingCount'])) {
+          $google_reviews_count = (int) $places_data['userRatingCount'];
+          $google_reviews_rating = !empty($places_data['rating']) ? round((float) $places_data['rating'], 1) : $google_reviews_rating;
+          $google_reviews_resolved = true;
+
+          set_transient('therapyflex_google_reviews_summary', array(
+            'count' => $google_reviews_count,
+            'rating' => $google_reviews_rating
+          ), 12 * HOUR_IN_SECONDS);
+        }
       }
     }
 
-    $google_reviews_count = 62;
+    // Respaldo si la API todavia no esta configurada, o la consulta fallo y
+    // nunca hubo un valor en cache: usa el ultimo dato guardado por el
+    // plugin Trustindex, si existe. Si tampoco hay eso, se queda con los
+    // valores por defecto de arriba.
+    if (!$google_reviews_resolved) {
+      $google_reviews_page_details = get_option('trustindex-google-page-details');
+
+      if (is_array($google_reviews_page_details) && !empty($google_reviews_page_details['rating_number'])) {
+        $google_reviews_count = (int) $google_reviews_page_details['rating_number'];
+
+        if (!empty($google_reviews_page_details['rating_score'])) {
+          $google_reviews_rating = round((float) $google_reviews_page_details['rating_score'], 1);
+        }
+      }
+    }
 
     $google_reviews_text = sprintf(
       _n(
