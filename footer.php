@@ -10,6 +10,7 @@
                   <li><a href="<?php echo esc_url(home_url('/servicios')); ?>">Servicios</a></li>
                   <li><a href="<?php echo esc_url(home_url('/#opiniones')); ?>">Testimonios</a></li>
                   <li><a href="<?php echo esc_url(home_url('/contacto')); ?>">Contáctanos</a></li>
+                  <li><a href="<?php echo esc_url(home_url('/privacidad')); ?>">Política de privacidad</a></li>
                 </ul>
               </div>
               <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
@@ -77,7 +78,7 @@
     global $wpdb;
 
     $google_reviews_rating = 5.0;
-    $google_reviews_count = 62;
+    $google_reviews_count = 65;
     $google_reviews_page_details = get_option('trustindex-google-page-details');
 
     if (is_array($google_reviews_page_details)) {
