@@ -50,7 +50,7 @@
                     'alt' => esc_attr(get_the_title() . ' - Therapy Flex Comas'),
                   )); ?>
                 <?php else : ?>
-                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/servicio.png'); ?>" alt="<?php echo esc_attr(get_the_title() . ' - Therapy Flex Comas'); ?>" width="720" height="540" loading="lazy">
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/servicio.webp'); ?>" alt="<?php echo esc_attr(get_the_title() . ' - Therapy Flex Comas'); ?>" width="720" height="540" loading="lazy">
                 <?php endif; ?>
               </a>
 

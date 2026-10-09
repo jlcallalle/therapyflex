@@ -487,7 +487,7 @@
               
                 <img
                   src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbs/servicio-thumb.jpg"
-                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/servicio.png"
+                  data-full="<?php echo get_template_directory_uri(); ?>/assets/images/servicio.webp"
                   alt="Terapia física para dolor lumbar en Therapy Flex, Urb. El Álamo, Comas"
                   loading="lazy"
                   width="420"

@@ -3,7 +3,7 @@
 
 <main id="contenido-principal" class="page-interna page-nosotros">
 
-  <div class="site-blocks-cover overlay" style="background-image: url(<?php echo esc_url(get_template_directory_uri() . '/assets/images/servicio.png'); ?>);">
+  <div class="site-blocks-cover overlay" style="background-image: url(<?php echo esc_url(get_template_directory_uri() . '/assets/images/servicio.webp'); ?>);">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-10">
@@ -39,7 +39,7 @@
         </div>
         <div class="col-lg-6">
           <div class="nosotros-media">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/liz_tananta.png'); ?>" alt="Licenciada Liz Tananta de Therapy Flex Comas" width="720" height="540" loading="eager">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/liz_tananta.webp'); ?>" alt="Licenciada Liz Tananta de Therapy Flex Comas" width="720" height="540" loading="eager">
           </div>
         </div>
       </div>

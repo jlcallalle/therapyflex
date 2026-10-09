@@ -3,7 +3,7 @@
 
 <main id="contenido-principal" class="page-interna page-legal">
 
-  <div class="site-blocks-cover overlay" style="background-image: url(<?php echo esc_url(get_template_directory_uri() . '/assets/images/servicio.png'); ?>);">
+  <div class="site-blocks-cover overlay" style="background-image: url(<?php echo esc_url(get_template_directory_uri() . '/assets/images/servicio.webp'); ?>);">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-10">
